@@ -11,20 +11,16 @@ package enums;
  */
 
 public enum Talents {
-    LETTUCE("Lettuce"),
-    TOMATO("Tomato"),
-    ONION("Onion"),
-    PICKLES("Pickels"),
-    PEPPERS("Peppers"),
-    OLIVES("Olives"),
-    MAYO("Mayo"),
-    MUSTARD("Mustard"),
-    BBQ_SAUCE("Bbq Sauce");
+    LEFT_HANDER("Left Hander"),
+    STOCKY("Stocky"),
+    TALL("Tall"),
+    FAST_TWITCH("Pickels"),
+    MARATHON_RUNNER("Marathon Runner");
 
     private final String description;
 
     /**
-     *Topping constructor.
+     *Talent constructor.
      *
      *<p>Constructs enumeration with desired String description.
      *   
@@ -32,7 +28,7 @@ public enum Talents {
      *@param description  String 
      */
 
-    private Topping(String description) {
+    private Talents(String description) {
         this.description = description;
     }
 

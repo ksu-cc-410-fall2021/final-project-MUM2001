@@ -6,7 +6,7 @@ import java.util.LinkedList;
  * Interface for the Character Items.
  *
  * <p>This is an Interface containing getters for
- *    the Character Objects's price, Health, and Talents.
+ *    the Character Objects's Stamina, Health, and Talent.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
  * @version 0.1
@@ -14,11 +14,11 @@ import java.util.LinkedList;
 public interface Character {
 
     /** 
-     * getter method for price of menu objects.
+     * getter method for stamin of character objects.
      *
      *@return double
      */
-    abstract double getPrice();
+    abstract double getStamina();
 
     /** 
      * getter method for health points of Charcater objects.
@@ -28,9 +28,9 @@ public interface Character {
     abstract int getHealth();
 
     /** 
-     * getter method for Talents of Character objects.
+     * getter method for Talent of Character objects.
      *
      *@return LinkedList
      */
-    LinkedList<String> getTalents();
+    LinkedList<String> getTalent();
 }
