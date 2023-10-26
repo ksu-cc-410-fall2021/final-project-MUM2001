@@ -21,7 +21,8 @@ public class myCharacter implements Character {
     private Talent talent;
     private int health;
     private int stamina;
-    private int baseHitChance;
+    private int hitChance;
+    private int defense;
 
 
     /**
@@ -38,9 +39,10 @@ public class myCharacter implements Character {
         this.class = null;
         this.race = null;
         this.talent = null;
-        this.health = 0;
-        this.stamina = 0;
-        this.baseHitChance = 0;
+        this.health = 100;
+        this.stamina = 100;
+        this.hitChance = 50;
+        this.defense = 50;
     }
 
     /**
@@ -68,8 +70,10 @@ public class myCharacter implements Character {
      */
     public void setClass(Class class) {
         this.class = class;
-        this.health += class.healthModifier;
-        this.health += class.staminaModifier;
+        this.health += class.getHealthModifier();
+        this.stamina += class.getStaminaModifier();
+        this.hitChance += class.getHitChanceModifier();
+        this.defense += class.getDefenseModifier();
     }
 
     /**
@@ -88,8 +92,10 @@ public class myCharacter implements Character {
      */
     public void setRace(Race race) {
         this.race = race;
-        this.health += race.healthModifier;
-        this.health += race.staminaModifier;
+        this.health += race.getHealthModifier();
+        this.stamina += race.getStaminaModifier();
+        this.hitChance += race.getHitChanceModifier();
+        this.defense += race.getDefenseModifier();
     }
 
     /**
@@ -109,10 +115,26 @@ public class myCharacter implements Character {
     public void setTalent(Talent talent) {
         this.talent = talent;
         if (talent.equals(talent.LEFT_HANDER)) {
-            baseHitChance += 1;
+            this.hitChance += 5;
         } else {
-            if (talent.equals(talent.LEFT_HANDER)) {
-            baseHitChance += 1;
+            if (talent.equals(talent.STOCKY)) {
+            this.defense -= 10;
+            this.health += 10;
+            } else {
+                if (talent.equals(talent.TALL)) {
+                this.defense += 5;
+                this.hitChance += 5;
+                } else {
+                    if (talent.equals(talent.FAST_TWITCH)) {
+                    this.stamina -= 10;
+                    this.hitChance += 10;
+                    } else {
+                       if (talent.equals(talent.MARATHON_RUNNER)) {
+                        this.stamina += 10;
+                        this.hitChance -= 10; 
+                       }
+                    }
+                }
             }
         }
     }
@@ -127,15 +149,54 @@ public class myCharacter implements Character {
     }
 
     /**
+     * Get health.
+     *
+     * @return int health of character
+     */
+    public int getHealth() {
+        return this.health;
+    }
+
+    /**
+     * Get stamina.
+     *
+     * @return int stamina of character
+     */
+    public String getStamina() {
+        return this.stamina;
+    }
+
+    /**
+     * Get hitChance.
+     *
+     * @return int hitChance of character
+     */
+    public String getHitChance() {
+        return this.hitChance;
+    }
+    /**
+     * Get defense.
+     *
+     * @return int defense of character
+     */
+    public String getDefense() {
+        return this.defense;
+    }
+
+    /**
      * Clear all myCharacter attributes.
      *
-     *<p>Sets all MyCharacter attributes back to null.
+     *<p>Sets all MyCharacter attributes back to null or default values.
      */
     public void clearCharacter() {
         this.name = null;
         this.class = null;
         this.race = null;
         this.talent = null;
+        this.health = 100;
+        this.stamina = 100;
+        this.hitChance = 50;
+        this.defense = 50;
     }
 
 

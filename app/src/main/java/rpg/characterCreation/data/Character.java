@@ -6,7 +6,7 @@ import java.util.LinkedList;
  * Interface for the Character Items.
  *
  * <p>This is an Interface containing getters for
- *    the Character Objects's Stamina, Health, and Talent.
+ *    the Character Objects's Stamina, Health, HitChance and Defense modifiers.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
  * @version 0.1
@@ -14,23 +14,30 @@ import java.util.LinkedList;
 public interface Character {
 
     /** 
-     * getter method for stamin of character objects.
+     * getter method for stamina modifier of character objects.
      *
      *@return double
      */
-    abstract double getStamina();
+    abstract double getStaminaModifier();
 
     /** 
      * getter method for health points of Charcater objects.
      *
      *@return int
      */
-    abstract int getHealth();
+    abstract int getHealthModifier();
 
     /** 
-     * getter method for Talent of Character objects.
+     * getter method for hit chance modifier of Character objects.
      *
-     *@return LinkedList
+     *@return int
      */
-    LinkedList<String> getTalent();
+    abstract int getHitChanceModifier();
+
+    /** 
+     * getter method for defense modifier of Character objects.
+     *
+     *@return int
+     */
+    abstract int getDefenseModifier();
 }
