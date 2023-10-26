@@ -18,7 +18,7 @@ public interface Character {
      *
      *@return double
      */
-    abstract double getStaminaModifier();
+    abstract int getStaminaModifier();
 
     /** 
      * getter method for health points of Charcater objects.

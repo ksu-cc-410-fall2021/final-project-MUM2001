@@ -1,7 +1,7 @@
 package me;
 
 import data.Character;
-import classes.Class;
+import classes.CharacterClass;
 import enums.Talents;
 import races.Race;
 import java.lang.IllegalArgumentException;
@@ -13,12 +13,12 @@ import java.util.LinkedList;
  * @author: Michael Umscheid mjumsc@ksu.edu
  * @version: 0.1
  */
-public class myCharacter implements Character {
+public class myCharacter {
 
     private String name;
-    private Class class;
+    private CharacterClass characterClass;
     private Race race;
-    private Talent talent;
+    private Talents talent;
     private int health;
     private int stamina;
     private int hitChance;
@@ -36,7 +36,7 @@ public class myCharacter implements Character {
         } else {
             this.name = name;
         }
-        this.class = null;
+        this.characterClass = null;
         this.race = null;
         this.talent = null;
         this.health = 100;
@@ -64,25 +64,25 @@ public class myCharacter implements Character {
     }
 
     /**
-     * Set Class.
+     * Set CharacterClass.
      *
      * @param class Class of character
      */
-    public void setClass(Class class) {
-        this.class = class;
-        this.health += class.getHealthModifier();
-        this.stamina += class.getStaminaModifier();
-        this.hitChance += class.getHitChanceModifier();
-        this.defense += class.getDefenseModifier();
+    public void setCharacterClass(CharacterClass characterClass) {
+        this.characterClass = characterClass;
+        this.health += characterClass.getHealthModifier();
+        this.stamina += characterClass.getStaminaModifier();
+        this.hitChance += characterClass.getHitChanceModifier();
+        this.defense += characterClass.getDefenseModifier();
     }
 
     /**
      * Get Class.
      *
-     * @return Class class of Character
+     * @return CharacterClass class of Character
      */
-    public Class getClass() {
-        return this.class;
+    public CharacterClass getCharacterClass() {
+        return this.characterClass;
     }
 
     /**
@@ -103,7 +103,7 @@ public class myCharacter implements Character {
      *
      * @return Race race of Character
      */
-    public Drink getRace() {
+    public Race getRace() {
         return this.race;
     }
 
@@ -112,27 +112,27 @@ public class myCharacter implements Character {
      *
      * @param Talent talent of Character
      */
-    public void setTalent(Talent talent) {
+    public void setTalent(Talents talent) {
         this.talent = talent;
-        if (talent.equals(talent.LEFT_HANDER)) {
+        if (talent.equals(Talents.LEFT_HANDER)) {
             this.hitChance += 5;
         } else {
-            if (talent.equals(talent.STOCKY)) {
-            this.defense -= 10;
-            this.health += 10;
+            if (talent.equals(Talents.STOCKY)) {
+                this.defense -= 10;
+                this.health += 10;
             } else {
-                if (talent.equals(talent.TALL)) {
-                this.defense += 5;
-                this.hitChance += 5;
+                if (talent.equals(Talents.TALL)) {
+                    this.defense += 5;
+                    this.hitChance += 5;
                 } else {
-                    if (talent.equals(talent.FAST_TWITCH)) {
-                    this.stamina -= 10;
-                    this.hitChance += 10;
+                    if (talent.equals(Talents.FAST_TWITCH)) {
+                        this.stamina -= 10;
+                        this.hitChance += 10;
                     } else {
-                       if (talent.equals(talent.MARATHON_RUNNER)) {
-                        this.stamina += 10;
-                        this.hitChance -= 10; 
-                       }
+                       if (talent.equals(Talents.MARATHON_RUNNER)) {
+                            this.stamina += 10;
+                            this.hitChance -= 10; 
+                        }
                     }
                 }
             }
@@ -142,9 +142,9 @@ public class myCharacter implements Character {
     /**
      * Get Talent.
      *
-     * @return Talent talent of Character
+     * @return Talents talent of Character
      */
-    public Talent getTalent() {
+    public Talents getTalent() {
         return this.talent;
     }
 
@@ -162,7 +162,7 @@ public class myCharacter implements Character {
      *
      * @return int stamina of character
      */
-    public String getStamina() {
+    public int getStamina() {
         return this.stamina;
     }
 
@@ -171,15 +171,16 @@ public class myCharacter implements Character {
      *
      * @return int hitChance of character
      */
-    public String getHitChance() {
+    public int getHitChance() {
         return this.hitChance;
     }
+
     /**
      * Get defense.
      *
      * @return int defense of character
      */
-    public String getDefense() {
+    public int getDefense() {
         return this.defense;
     }
 
@@ -190,7 +191,7 @@ public class myCharacter implements Character {
      */
     public void clearCharacter() {
         this.name = null;
-        this.class = null;
+        this.characterClass = null;
         this.race = null;
         this.talent = null;
         this.health = 100;
@@ -198,25 +199,4 @@ public class myCharacter implements Character {
         this.hitChance = 50;
         this.defense = 50;
     }
-
-
-    /**
-     * Get All Items.
-     *
-     * @return LinkedList Items in Character
-     */
-    public LinkedList<Item> getAllItems() {
-        LinkedList<Item> list = new LinkedList<>();
-        if (this.class != null) {
-            list.add(this.class);
-        }
-        if (this.race != null) {
-            list.add(this.race);
-        }
-        if (this.talent != null) {
-            list.add(this.talent);
-        }
-        return list;
-    }
-
 }

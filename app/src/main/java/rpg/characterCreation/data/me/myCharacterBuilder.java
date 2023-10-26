@@ -1,11 +1,11 @@
 package me;
 
 import data.Character;
-import classes.Class;
+import classes.CharacterClass;
 import classes.Mage;
 import classes.Rogue;
 import classes.Warrior;
-import perks.Talents;
+import enums.Talents;
 import races.Dwarf;
 import races.Elf;
 import races.Human;

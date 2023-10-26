@@ -1,8 +1,8 @@
-package races;
+package classes;
 
 import data.Character;
 
-public abstract class Race implements Character{
+public abstract class CharacterClass implements Character {
 
     protected int healthModifier;
     protected int staminaModifier;
@@ -12,7 +12,7 @@ public abstract class Race implements Character{
     /**
      *Getter for the healthModifier attribute.
      *
-     *<p>Gets the healthModifier of the character race.
+     *<p>Gets the healthModifier of the character class.
      *
      *@return int the healthModifier 
      */
@@ -24,7 +24,7 @@ public abstract class Race implements Character{
     /**
      *Getter for the staminaModifier attribute.
      *
-     *<p>Gets the staminaModifier of the character race.
+     *<p>Gets the staminaModifier of the character class.
      *
      *@return int the staminaModifier 
      */
@@ -36,7 +36,7 @@ public abstract class Race implements Character{
     /**
      *Getter for the hitChanceModifier attribute.
      *
-     *<p>Gets the hitChanceModifier of the character race.
+     *<p>Gets the hitChanceModifier of the character class.
      *
      *@return int the hitChanceModifier 
      */
@@ -48,7 +48,7 @@ public abstract class Race implements Character{
     /**
      *Getter for the defenseModifier attribute.
      *
-     *<p>Gets the defenseModifier of the character race.
+     *<p>Gets the defenseModifier of the character class.
      *
      *@return int the defenseModifier 
      */
