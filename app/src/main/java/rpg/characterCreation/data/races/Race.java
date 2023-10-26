@@ -2,7 +2,17 @@ package races;
 
 import data.Character;
 
-public abstract class Race implements Character{
+
+/** 
+ * The Race class(representation of character's race).
+ *
+ * <p>This class is an enumeration of the various races
+ *    available for players to play as.
+ *
+ * @author Michael Umscheid mjumsc@ksu.edu
+ * @version 0.1
+ */
+public abstract class Race implements Character {
 
     protected int healthModifier;
     protected int staminaModifier;

@@ -2,6 +2,16 @@ package classes;
 
 import data.Character;
 
+
+/** 
+ * The CharacterClass class(representation of character's Class).
+ *
+ * <p>This class is an enumeration of the various CharacterClasses
+ *    available for players.
+ *
+ * @author Michael Umscheid mjumsc@ksu.edu
+ * @version 0.1
+ */
 public abstract class CharacterClass implements Character {
 
     protected int healthModifier;

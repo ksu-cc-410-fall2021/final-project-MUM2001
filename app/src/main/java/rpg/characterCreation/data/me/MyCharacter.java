@@ -1,11 +1,9 @@
 package me;
 
-import data.Character;
 import classes.CharacterClass;
+import data.Character;
 import enums.Talents;
 import races.Race;
-import java.lang.IllegalArgumentException;
-import java.util.LinkedList;
 
 /**
  * Represents a player character.
@@ -13,7 +11,7 @@ import java.util.LinkedList;
  * @author: Michael Umscheid mjumsc@ksu.edu
  * @version: 0.1
  */
-public class myCharacter {
+public class MyCharacter {
 
     private String name;
     private CharacterClass characterClass;
@@ -30,7 +28,7 @@ public class myCharacter {
      *
      * @param name String representing charcater name
      */
-    public myCharacter(String name) {
+    public MyCharacter(String name) {
         if ((name.length() == 0)) {
             this.name = null;
         } else {
@@ -66,7 +64,7 @@ public class myCharacter {
     /**
      * Set CharacterClass.
      *
-     * @param class Class of character
+     * @param characterClass Class of the character
      */
     public void setCharacterClass(CharacterClass characterClass) {
         this.characterClass = characterClass;
@@ -110,12 +108,14 @@ public class myCharacter {
     /**
      * Set Talent.
      *
-     * @param Talent talent of Character
+     *<p>Sets characters talent.
+     *
+     *@param talent the chosen perk of the character.
      */
     public void setTalent(Talents talent) {
         this.talent = talent;
         if (talent.equals(Talents.LEFT_HANDER)) {
-            this.hitChance += 5;
+            this.hitChance += 10;
         } else {
             if (talent.equals(Talents.STOCKY)) {
                 this.defense -= 10;
@@ -126,10 +126,10 @@ public class myCharacter {
                     this.hitChance += 5;
                 } else {
                     if (talent.equals(Talents.FAST_TWITCH)) {
-                        this.stamina -= 10;
-                        this.hitChance += 10;
+                        this.stamina -= 20;
+                        this.hitChance += 20;
                     } else {
-                       if (talent.equals(Talents.MARATHON_RUNNER)) {
+                        if (talent.equals(Talents.MARATHON_RUNNER)) {
                             this.stamina += 10;
                             this.hitChance -= 10; 
                         }
