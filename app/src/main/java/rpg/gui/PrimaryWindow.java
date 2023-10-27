@@ -35,7 +35,7 @@ public class PrimaryWindow extends JFrame {
         this.setLayout(new GridBagLayout());
 
         this.main = null;
-        this.loadMenuPanel();
+        this.loadCreationPanel();
 
         this.sidebar = new CharacterPanel(this);
         GridBagConstraints sidegbc = new GridBagConstraints();
