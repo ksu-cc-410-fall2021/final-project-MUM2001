@@ -26,6 +26,12 @@ import races.Race;
 public class HumanTest {
 
     @Test 
+    public void testToStringReturnsCorrectDescription() {
+        Human rk = new Human();
+        assertTrue(rk.toString().equals("Human"));
+    }
+
+    @Test 
     public void testInstanceOfRace() {
         Human rk = new Human();
         assertTrue(rk instanceof Race);

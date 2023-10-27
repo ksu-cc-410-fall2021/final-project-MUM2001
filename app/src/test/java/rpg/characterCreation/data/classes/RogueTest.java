@@ -26,6 +26,12 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class RogueTest {
 
     @Test 
+    public void testToStringReturnsCorrectDescription() {
+        Rogue rk = new Rogue();
+        assertTrue(rk.toString().equals("Rogue"));
+    }
+
+    @Test 
     public void testInstanceOfCharacterClass() {
         Rogue rk = new Rogue();
         assertTrue(rk instanceof CharacterClass);

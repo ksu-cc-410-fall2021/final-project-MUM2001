@@ -26,6 +26,12 @@ import races.Race;
 public class DwarfTest {
 
     @Test 
+    public void testToStringReturnsCorrectDescription() {
+        Dwarf rk = new Dwarf();
+        assertTrue(rk.toString().equals("Dwarf"));
+    }
+
+    @Test 
     public void testInstanceOfRace() {
         Dwarf rk = new Dwarf();
         assertTrue(rk instanceof Race);

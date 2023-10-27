@@ -26,4 +26,18 @@ public class Human extends Race {
         this.defenseModifier = 0;
     }
 
+    /**
+     *Overide method to redefine toString() method.
+     *
+     *<p>Adjusts output to print an accurate description of
+     *   the Human race.
+     *
+     *@return String description of Human
+     */
+
+    @Override
+    public String toString() {
+        return "Human";
+    }
+
 }

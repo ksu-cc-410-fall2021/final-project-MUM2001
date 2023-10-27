@@ -25,4 +25,18 @@ public class Warrior extends CharacterClass {
         this.defenseModifier = 10;
     }
 
+    /**
+     *Overide method to redefine toString() method.
+     *
+     *<p>Adjusts output to print an accurate description of
+     *   the Warrior class.
+     *
+     *@return String description of Warrior
+     */
+
+    @Override
+    public String toString() {
+        return "Warrior";
+    }
+
 }

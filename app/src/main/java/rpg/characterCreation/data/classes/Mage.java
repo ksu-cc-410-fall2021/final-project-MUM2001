@@ -26,4 +26,18 @@ public class Mage extends CharacterClass {
         this.defenseModifier = 0;
     }
 
+    /**
+     *Overide method to redefine toString() method.
+     *
+     *<p>Adjusts output to print an accurate description of
+     *   the Mage class.
+     *
+     *@return String description of Mage
+     */
+    @Override
+    public String toString() {
+        return "Mage";
+    }
+
+
 }

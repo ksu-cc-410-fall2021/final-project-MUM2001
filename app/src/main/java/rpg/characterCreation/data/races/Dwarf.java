@@ -25,4 +25,18 @@ public class Dwarf extends Race {
         this.hitChanceModifier = -10;
         this.defenseModifier = +10;
     }
+
+    /**
+     *Overide method to redefine toString() method.
+     *
+     *<p>Adjusts output to print an accurate description of
+     *   the Dwarven race.
+     *
+     *@return String description of Dwarf
+     */
+
+    @Override
+    public String toString() {
+        return "Dwarf";
+    }
 }

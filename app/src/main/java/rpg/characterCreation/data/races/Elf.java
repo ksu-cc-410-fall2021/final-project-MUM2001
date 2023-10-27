@@ -26,4 +26,18 @@ public class Elf extends Race {
         this.defenseModifier = -10;
     }
 
+    /**
+     *Overide method to redefine toString() method.
+     *
+     *<p>Adjusts output to print an accurate description of
+     *   the Elven race.
+     *
+     *@return String description of Elf
+     */
+
+    @Override
+    public String toString() {
+        return "Elf";
+    }
+
 }

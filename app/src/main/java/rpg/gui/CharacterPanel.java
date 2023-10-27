@@ -25,11 +25,11 @@ public class CharacterPanel extends JPanel implements ActionListener {
     private PrimaryWindow parent;
     private JLabel name;
     private JLabel race;
-    private JLabel character_class;
+    private JLabel characterClass;
     private JLabel talent;
     private JLabel health;
     private JLabel stamina;
-    private JLabel hit_chance;
+    private JLabel hitChance;
     private JLabel defense;
 
     /**
@@ -97,14 +97,14 @@ public class CharacterPanel extends JPanel implements ActionListener {
         JLabel clabel = new JLabel("Class: ");
         this.add(clabel, clablegbc);
 
-        character_class = new JLabel("which?");
+        characterClass = new JLabel("which?");
         GridBagConstraints classgbc = new GridBagConstraints();
         classgbc.gridx = 1;
         classgbc.gridy = 3;
         classgbc.weightx = 0.5;
         classgbc.insets = new Insets(2, 2, 2, 2);
         classgbc.anchor = GridBagConstraints.LINE_START;
-        this.add(character_class, classgbc);
+        this.add(characterClass, classgbc);
 
         GridBagConstraints tlablegbc = new GridBagConstraints();
         tlablegbc.gridx = 0;
@@ -169,14 +169,14 @@ public class CharacterPanel extends JPanel implements ActionListener {
         JLabel htlable = new JLabel("Hit Chance: %");
         this.add(htlable, htlablegbc);
 
-        hit_chance = new JLabel("0");
-        GridBagConstraints hit_chancegbc = new GridBagConstraints();
-        hit_chancegbc.gridx = 1;
-        hit_chancegbc.gridy = 7;
-        hit_chancegbc.weightx = 0.5;
-        hit_chancegbc.insets = new Insets(2, 2, 2, 2);
-        hit_chancegbc.anchor = GridBagConstraints.LINE_START;
-        this.add(hit_chance, hit_chancegbc);
+        hitChance = new JLabel("0");
+        GridBagConstraints hitChancegbc = new GridBagConstraints();
+        hitChancegbc.gridx = 1;
+        hitChancegbc.gridy = 7;
+        hitChancegbc.weightx = 0.5;
+        hitChancegbc.insets = new Insets(2, 2, 2, 2);
+        hitChancegbc.anchor = GridBagConstraints.LINE_START;
+        this.add(hitChance, hitChancegbc);
 
         GridBagConstraints dlablegbc = new GridBagConstraints();
         dlablegbc.gridx = 0;

@@ -27,6 +27,12 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class WarriorTest {
 
     @Test 
+    public void testToStringReturnsCorrectDescription() {
+        Warrior rk = new Warrior();
+        assertTrue(rk.toString().equals("Warrior"));
+    }
+
+    @Test 
     public void testInstanceOfCharacterClass() {
         Warrior rk = new Warrior();
         assertTrue(rk instanceof CharacterClass);

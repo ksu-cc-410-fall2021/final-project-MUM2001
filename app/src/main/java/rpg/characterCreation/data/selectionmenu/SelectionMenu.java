@@ -1,13 +1,13 @@
-package selectionMenu;
+package selectionmenu;
 
-import data.Character;
-import java.util.LinkedList;
 import classes.Mage;
 import classes.Rogue;
 import classes.Warrior;
-import races.Human;
+import data.Character;
+import java.util.LinkedList;
 import races.Dwarf;
 import races.Elf;
+import races.Human;
 
 /** 
  * The SelectionMenu class(an OOP representation of the rpg creator selection menu).

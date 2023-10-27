@@ -26,6 +26,12 @@ import races.Race;
 public class ElfTest {
 
     @Test 
+    public void testToStringReturnsCorrectDescription() {
+        Elf rk = new Elf();
+        assertTrue(rk.toString().equals("Elf"));
+    }
+
+    @Test 
     public void testInstanceOfRace() {
         Elf rk = new Elf();
         assertTrue(rk instanceof Race);

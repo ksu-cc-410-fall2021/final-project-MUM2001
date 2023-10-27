@@ -26,4 +26,18 @@ public class Rogue extends CharacterClass {
         this.defenseModifier = -10;
     }
 
+    /**
+     *Overide method to redefine toString() method.
+     *
+     *<p>Adjusts output to print an accurate description of
+     *   the Rogue class.
+     *
+     *@return String description of Rogue
+     */
+
+    @Override
+    public String toString() {
+        return "Rogue";
+    }
+
 }

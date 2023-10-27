@@ -45,4 +45,10 @@ public class MageTest {
         assertTrue(rk.getHitChanceModifier() == 20);
         assertTrue(rk.getDefenseModifier() == 0);
     }
+
+    @Test 
+    public void testToStringReturnsCorrectDescription() {
+        Mage rk = new Mage();
+        assertTrue(rk.toString().equals("Mage"));
+    }
 }

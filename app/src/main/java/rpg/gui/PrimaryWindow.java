@@ -1,13 +1,13 @@
 package gui;
 
+import gui.CharacterPanel;
+import gui.CreationPanel;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import gui.CreationPanel;
-import gui.CharacterPanel;
 
 
 /**
