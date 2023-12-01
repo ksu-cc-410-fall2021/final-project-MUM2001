@@ -68,10 +68,10 @@ public class MyCharacter {
      */
     public void setCharacterClass(CharacterClass characterClass) {
         if (this.characterClass != null) {
-            this.health -= characterClass.getHealthModifier();
-            this.stamina -= characterClass.getStaminaModifier();
-            this.hitChance -= characterClass.getHitChanceModifier();
-            this.defense -= characterClass.getDefenseModifier();
+            this.health -= this.characterClass.getHealthModifier();
+            this.stamina -= this.characterClass.getStaminaModifier();
+            this.hitChance -= this.characterClass.getHitChanceModifier();
+            this.defense -= this.characterClass.getDefenseModifier();
         }
         this.characterClass = characterClass;
         this.health += characterClass.getHealthModifier();
@@ -96,10 +96,10 @@ public class MyCharacter {
      */
     public void setRace(Race race) {
         if (this.race != null) {
-            this.health -= race.getHealthModifier();
-            this.stamina -= race.getStaminaModifier();
-            this.hitChance -= race.getHitChanceModifier();
-            this.defense -= race.getDefenseModifier();
+            this.health -= this.race.getHealthModifier();
+            this.stamina -= this.race.getStaminaModifier();
+            this.hitChance -= this.race.getHitChanceModifier();
+            this.defense -= this.race.getDefenseModifier();
         }
         this.race = race;
         this.health += race.getHealthModifier();

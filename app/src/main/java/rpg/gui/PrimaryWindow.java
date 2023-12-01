@@ -1,5 +1,6 @@
 package gui;
 
+import classes.CharacterClass;
 import enums.Talents;
 import gui.CharacterPanel;
 import gui.CreationPanel;
@@ -115,5 +116,15 @@ public class PrimaryWindow extends JFrame {
     */
     public void changeCharacterClass(CharacterClass characterClass) {
         this.sidebar.changeCharacterClass(characterClass);
+    }
+
+    /** 
+    * The changeName method.
+    *
+    *
+    *@param name String
+    */
+    public void changeName(String name) {
+        this.sidebar.changeName(name);
     }
 }

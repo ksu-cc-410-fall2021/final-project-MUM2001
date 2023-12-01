@@ -1,6 +1,9 @@
 package gui;
 
 import classes.CharacterClass;
+import classes.Mage;
+import classes.Rogue;
+import classes.Warrior;
 import data.Character;
 import enums.Talents;
 import gui.CharacterPanel;
@@ -14,6 +17,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import races.Dwarf;
+import races.Elf;
 import races.Human;
 import races.Race;
 import selectionmenu.SelectionMenu;
@@ -32,6 +38,7 @@ import selectionmenu.SelectionMenu;
 public class CreationPanel extends JPanel implements ActionListener {
 
     private PrimaryWindow parent;
+    private JTextField namefield;
 
     /**
      * Constructor.
@@ -70,6 +77,31 @@ public class CreationPanel extends JPanel implements ActionListener {
             gbc.insets = new Insets(2, 2, 2, 2);
             this.add(button, gbc);
         }
+        GridBagConstraints namelabelgbc = new GridBagConstraints();
+        namelabelgbc.gridx = 0;
+        namelabelgbc.gridy = i;
+        i += 1;
+        namelabelgbc.weightx = 1.0;
+        namelabelgbc.weighty = 1.0;
+        //namelabelgbc.fill = GridBagConstraints.BOTH;
+        namelabelgbc.insets = new Insets(2, 2, 2, 2);
+        //namelabelgbc.anchor = GridBagConstraints.LINE_START;
+        JLabel namelabel = new JLabel("Name:");
+        this.add(namelabel, namelabelgbc);
+
+        GridBagConstraints namegbc = new GridBagConstraints();
+        namegbc.gridx = 0;
+        namegbc.gridy = i;
+        i += 1;
+        namegbc.weightx = 1.0;
+        namegbc.weighty = 1.0;
+        namegbc.fill = GridBagConstraints.BOTH;
+        namegbc.insets = new Insets(2, 2, 2, 2);
+        namegbc.anchor = GridBagConstraints.LINE_START;
+        this.namefield = new JTextField(" What is your name ?", 20);
+        namefield.setActionCommand("Name");
+        namefield.addActionListener(this);
+        this.add(namefield, namegbc);
         i = 0;
         
         GridBagConstraints raceLabelgbc = new GridBagConstraints();
@@ -160,15 +192,27 @@ public class CreationPanel extends JPanel implements ActionListener {
             Race r = new Human();
             this.parent.changeRace(r);
         } else if ("Elf".equals(event.getActionCommand())) {
-            System.out.println("Elf");
+            //System.out.println("Elf");
+            Race r = new Elf();
+            this.parent.changeRace(r);
         } else if ("Dwarf".equals(event.getActionCommand())) {
-            System.out.println("Dwarf");
+            //System.out.println("Dwarf");
+            Race r = new Dwarf();
+            this.parent.changeRace(r);
         } else if ("Warrior".equals(event.getActionCommand())) {
-            System.out.println("Warrior");
+            //System.out.println("Warrior");
+            CharacterClass c = new Warrior();
+            this.parent.changeCharacterClass(c);
         } else if ("Rogue".equals(event.getActionCommand())) {
-            System.out.println("Rogue");
+            //System.out.println("Rogue");
+            CharacterClass c = new Rogue();
+            this.parent.changeCharacterClass(c);
         } else if ("Mage".equals(event.getActionCommand())) {
-            System.out.println("Mage");
+            //System.out.println("Mage");
+            CharacterClass c = new Mage();
+            this.parent.changeCharacterClass(c);
+        } else if ("Name".equals(event.getActionCommand())) {
+            this.parent.changeName(namefield.getText());
         }
         
     }

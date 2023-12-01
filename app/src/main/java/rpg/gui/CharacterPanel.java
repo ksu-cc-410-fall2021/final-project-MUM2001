@@ -261,6 +261,17 @@ public class CharacterPanel extends JPanel implements ActionListener {
         this.characterClass.setText(characterClass.toString() + "");
     }
 
+    /** 
+    * The changeName method.
+    *
+    *
+    *@param name String
+    */
+    public void changeName(String name) {
+        this.myCharacter.setName(name);
+        this.name.setText(name + "");
+    }
+
     /**
      * actionPerformed.
      *
