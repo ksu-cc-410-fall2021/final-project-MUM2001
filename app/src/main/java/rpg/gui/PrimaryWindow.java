@@ -1,5 +1,6 @@
 package gui;
 
+import enums.Talents;
 import gui.CharacterPanel;
 import gui.CreationPanel;
 import java.awt.Dimension;
@@ -8,6 +9,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import races.Race;
 
 
 /**
@@ -19,7 +21,7 @@ import javax.swing.JPanel;
 public class PrimaryWindow extends JFrame {
 
     private JPanel main;
-    private JPanel sidebar;
+    private CharacterPanel sidebar;
 
     /**
      * Constructor.
@@ -83,5 +85,35 @@ public class PrimaryWindow extends JFrame {
         this.add(this.main, maingbc);
         this.pack();
         this.repaint();
+    }
+
+    /** 
+    * The changeTalent method.
+    *
+    *
+    *@param talent Talents
+    */
+    public void changeTalent(Talents talent) {
+        this.sidebar.changeTalent(talent);
+    }
+
+    /** 
+    * The changeRace method.
+    *
+    *
+    *@param race Race
+    */
+    public void changeRace(Race race) {
+        this.sidebar.changeRace(race);
+    }
+
+    /** 
+    * The changeCharacterClass method.
+    *
+    *
+    *@param characterClass class
+    */
+    public void changeCharacterClass(CharacterClass characterClass) {
+        this.sidebar.changeCharacterClass(characterClass);
     }
 }

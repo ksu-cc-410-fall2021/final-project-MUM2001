@@ -1,0 +1,1 @@
+external library considered: https://github.com/alexv-anderson/WildPi-Dice

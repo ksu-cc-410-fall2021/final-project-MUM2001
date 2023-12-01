@@ -1,5 +1,7 @@
 package gui;
 
+import classes.CharacterClass;
+import enums.Talents;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -12,6 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
+import me.MyCharacter;
+import races.Race;
 
 /**
  * Represents the Character/Sidebar Panel.
@@ -31,6 +35,7 @@ public class CharacterPanel extends JPanel implements ActionListener {
     private JLabel stamina;
     private JLabel hitChance;
     private JLabel defense;
+    private MyCharacter myCharacter;
 
     /**
      * Constructor.
@@ -42,6 +47,7 @@ public class CharacterPanel extends JPanel implements ActionListener {
         this.parent = parent;
         this.setPreferredSize(new Dimension(300, 600));
         this.setLayout(new GridBagLayout());
+        this.myCharacter = new MyCharacter("who?");
 
         GridBagConstraints characterlabelgbc = new GridBagConstraints();
         characterlabelgbc.gridx = 0;
@@ -196,17 +202,63 @@ public class CharacterPanel extends JPanel implements ActionListener {
         defensegbc.anchor = GridBagConstraints.LINE_START;
         this.add(defense, defensegbc);
 
-        JButton edit = new JButton("Edit");
-        edit.setActionCommand("edit");
-        edit.addActionListener(this);
-        GridBagConstraints editgbc = new GridBagConstraints();
-        editgbc.gridx = 0;
-        editgbc.gridy = 9;
-        editgbc.gridwidth = 2;
-        editgbc.weightx = 1.0;
-        editgbc.fill = GridBagConstraints.BOTH;
-        editgbc.insets = new Insets(2, 2, 2, 2);
-        this.add(edit, editgbc);
+
+        JButton fight = new JButton("Fight");
+        fight.setActionCommand("fight");
+        fight.addActionListener(this);
+        GridBagConstraints fightgbc = new GridBagConstraints();
+        fightgbc.gridx = 0;
+        fightgbc.gridy = 9;
+        fightgbc.gridwidth = 2;
+        fightgbc.weightx = 1.0;
+        fightgbc.fill = GridBagConstraints.BOTH;
+        fightgbc.insets = new Insets(2, 2, 2, 2);
+        this.add(fight, fightgbc);
+    }
+
+    /** 
+    * The changeTalent method.
+    *
+    *
+    *@param talent Talents
+    */
+    public void changeTalent(Talents talent) {
+        this.myCharacter.setTalent(talent);
+        this.defense.setText(myCharacter.getDefense() + "");
+        this.hitChance.setText(myCharacter.getHitChance() + "");
+        this.stamina.setText(myCharacter.getStamina() + "");
+        this.health.setText(myCharacter.getHealth() + "");
+        this.talent.setText(talent.toString() + "");
+    }
+
+    /** 
+    * The changeRace method.
+    *
+    *
+    *@param race Race
+    */
+    public void changeRace(Race race) {
+        this.myCharacter.setRace(race);
+        this.defense.setText(myCharacter.getDefense() + "");
+        this.hitChance.setText(myCharacter.getHitChance() + "");
+        this.stamina.setText(myCharacter.getStamina() + "");
+        this.health.setText(myCharacter.getHealth() + "");
+        this.race.setText(race.toString());
+    }
+
+    /** 
+    * The changeCharacterClass method.
+    *
+    *
+    *@param characterClass class
+    */
+    public void changeCharacterClass(CharacterClass characterClass) {
+        this.myCharacter.setCharacterClass(characterClass);
+        this.defense.setText(myCharacter.getDefense() + "");
+        this.hitChance.setText(myCharacter.getHitChance() + "");
+        this.stamina.setText(myCharacter.getStamina() + "");
+        this.health.setText(myCharacter.getHealth() + "");
+        this.characterClass.setText(characterClass.toString() + "");
     }
 
     /**

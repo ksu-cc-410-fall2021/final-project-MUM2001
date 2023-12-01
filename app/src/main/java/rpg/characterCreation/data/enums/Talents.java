@@ -13,7 +13,7 @@ public enum Talents {
     LEFT_HANDER("Left Hander"),
     STOCKY("Stocky"),
     TALL("Tall"),
-    FAST_TWITCH("Pickels"),
+    FAST_TWITCH("Fast Twitch"),
     MARATHON_RUNNER("Marathon Runner");
 
     private final String description;

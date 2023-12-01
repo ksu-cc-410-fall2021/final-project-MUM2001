@@ -67,6 +67,12 @@ public class MyCharacter {
      * @param characterClass Class of the character
      */
     public void setCharacterClass(CharacterClass characterClass) {
+        if (this.characterClass != null) {
+            this.health -= characterClass.getHealthModifier();
+            this.stamina -= characterClass.getStaminaModifier();
+            this.hitChance -= characterClass.getHitChanceModifier();
+            this.defense -= characterClass.getDefenseModifier();
+        }
         this.characterClass = characterClass;
         this.health += characterClass.getHealthModifier();
         this.stamina += characterClass.getStaminaModifier();
@@ -89,6 +95,12 @@ public class MyCharacter {
      * @param race Race of Character
      */
     public void setRace(Race race) {
+        if (this.race != null) {
+            this.health -= race.getHealthModifier();
+            this.stamina -= race.getStaminaModifier();
+            this.hitChance -= race.getHitChanceModifier();
+            this.defense -= race.getDefenseModifier();
+        }
         this.race = race;
         this.health += race.getHealthModifier();
         this.stamina += race.getStaminaModifier();
@@ -113,6 +125,32 @@ public class MyCharacter {
      *@param talent the chosen perk of the character.
      */
     public void setTalent(Talents talent) {
+        if (this.talent != null) {
+            if (this.talent.equals(Talents.LEFT_HANDER)) {
+                this.hitChance -= 10;
+            } else {
+                if (this.talent.equals(Talents.STOCKY)) {
+                    this.defense += 10;
+                    this.health -= 10;
+                } else {
+                    if (this.talent.equals(Talents.TALL)) {
+                        this.defense -= 5;
+                        this.hitChance -= 5;
+                    } else {
+                        if (this.talent.equals(Talents.FAST_TWITCH)) {
+                            this.stamina += 20;
+                            this.hitChance -= 20;
+                        } else {
+                            if (this.talent.equals(Talents.MARATHON_RUNNER)) {
+                                this.stamina -= 10;
+                                this.hitChance += 10; 
+                            }
+                        }
+                    }
+                }
+            }
+            //
+        }
         this.talent = talent;
         if (talent.equals(Talents.LEFT_HANDER)) {
             this.hitChance += 10;
