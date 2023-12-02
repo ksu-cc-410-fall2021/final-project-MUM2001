@@ -1,5 +1,6 @@
 package gui;
 
+import battle.Player;
 import classes.CharacterClass;
 import enums.Talents;
 import java.awt.Dimension;
@@ -278,7 +279,11 @@ public class CharacterPanel extends JPanel implements ActionListener {
      *<p>ActionListener, not in use currently.
      */
     @Override
-    public void actionPerformed(ActionEvent e) {
-        
+    public void actionPerformed(ActionEvent event) {
+        if (("fight").equals(event.getActionCommand())) {
+            Player player = new Player(this.myCharacter);
+            FightPanel p = new FightPanel(this.parent, player);
+            parent.loadPanel(p);
+        }
     }
 }

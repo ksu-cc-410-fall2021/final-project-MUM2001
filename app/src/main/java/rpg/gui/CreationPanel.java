@@ -98,7 +98,7 @@ public class CreationPanel extends JPanel implements ActionListener {
         namegbc.fill = GridBagConstraints.BOTH;
         namegbc.insets = new Insets(2, 2, 2, 2);
         namegbc.anchor = GridBagConstraints.LINE_START;
-        this.namefield = new JTextField(" What is your name ?", 20);
+        this.namefield = new JTextField(" What is your name ?", 10);
         namefield.setActionCommand("Name");
         namefield.addActionListener(this);
         this.add(namefield, namegbc);
