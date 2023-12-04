@@ -14,4 +14,25 @@ import com.wildpi.games.structures.dice.DieBuilder;
  */
 public class Dice {
 
+    private Die<Integer> die;
+
+    /**
+     *Constructor for Dice class.
+     */
+    public Dice() {
+        Integer[] d20values = new Integer[]{1, 2, 
+            3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+        this.die = DieBuilder.fairDie(d20values);
+    }
+
+    /**
+     *Rolls the die object to get a new value.
+     *
+     *@return Integer
+     */
+    public Integer roll() {
+        this.die.roll();
+        return this.die.getValue();
+    }
+
 }

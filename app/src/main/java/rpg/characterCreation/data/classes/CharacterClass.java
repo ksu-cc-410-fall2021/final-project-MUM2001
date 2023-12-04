@@ -26,7 +26,6 @@ public abstract class CharacterClass implements Character {
      *
      *@return int the healthModifier 
      */
-
     public int getHealthModifier() {
         return this.healthModifier;
     }
