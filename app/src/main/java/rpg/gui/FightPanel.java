@@ -1,9 +1,8 @@
 package gui;
 
-//import battle.Player;
-//import battle.Computer;
-//import battle.Dice;
-//import battle.Fight;
+import battle.Computer;
+import battle.Dice;
+import battle.Fight;
 import battle.Player;
 import data.Character;
 import enums.Talents;
