@@ -34,6 +34,15 @@ public class Player {
         this.defense = myCharacter.getDefense();
     }
 
+    /*
+     * Get name.
+     *
+     * @return String name of character
+     */
+    public String getName() {
+        return this.myCharacter.getName();
+    }
+
     /**
      * Get Talent.
      *
@@ -112,6 +121,16 @@ public class Player {
      */
     public void makeHit() {
         this.stamina = this.stamina - 20;
+    }
+
+    /**
+     * resets stamina to max when needed.
+     *
+     *<p>Used when player Defends or exhausts all stamina.
+     *
+     */
+    public void resetStamina() {
+        this.stamina = this.myCharacter.getStamina();
     }
 
     /**

@@ -21,8 +21,8 @@ import races.Human;
 public class Fight {
 
     private Player player;
-    private Dice dice;
-    private Computer computer;
+    private static Dice dice = new Dice();
+    private Player computer;
     private boolean initiative;
     private boolean over;
     private Player winner;
@@ -35,13 +35,40 @@ public class Fight {
      * @param player MyCharacter Instance representing player
      */
     public Fight(Player player) {
-        this.dice = new Dice();
         this.player = player;
         this.computer = Fight.randomEnemy();
         this.over = false;
-        //this.initiative = Fight.rollForInitiative();
-        
+        this.initiative = Fight.rollForInitiative();
+        this.winner = null;
     }
+
+    /**
+     * Performs an attack for the player and performs computer's responce.
+     *
+     *<p>Calls functions in and Modifies Player and Computer Instances
+     *  to simulate attack performed.
+     *
+     *@return String result of Action
+     */
+    public String attack() {
+        String returned = "";
+        this.initiative = false;
+        if (this.player.getCurrentStamina() > 0) {
+            this.player.makeHit();
+            this.computer.takeHit(20);
+            returned = returned + (this.player.getName() + " hits " + this.computer.getName()
+                +  "with furious anger! ");
+            //returned = returned + this.computerAction(); 
+        } else {
+            this.player.resetStamina();
+            returned = returned + (this.player.getName() 
+                + " is to exhauted to do anything right now!");
+            //returned = returned + this.computerAction();
+        }
+        return returned;
+    }
+
+
 
     /**
      * Selects a random enemy for the computer to be.
@@ -71,7 +98,22 @@ public class Fight {
         int randomNumber = randomNumGen.nextInt(3);
         Computer enemy = new Computer(possibleEnemies[randomNumber]);
         return enemy;
+    }
 
+    /**
+     * Rolls dice to determine who goes first(Has Initiative).
+     *
+     *
+     *@return boolean wether player has initiative or not
+     */
+    public static boolean rollForInitiative() {
+        int playerValue = Fight.dice.roll();
+        int computerValue = Fight.dice.roll();
+        if (playerValue >= computerValue) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     
