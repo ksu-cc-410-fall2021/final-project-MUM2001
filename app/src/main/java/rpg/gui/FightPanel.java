@@ -1,6 +1,5 @@
 package gui;
 
-import battle.Computer;
 import battle.Dice;
 import battle.Fight;
 import battle.Player;

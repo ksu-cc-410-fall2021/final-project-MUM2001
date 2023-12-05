@@ -49,16 +49,41 @@ public class Fight {
         String returned = "";
         if (this.player.getCurrentStamina() > 0) {
             this.player.makeHit();
-            this.computer.takeHit(20);
-            returned = returned + (this.player.getName() + " hits " + this.computer.getName()
-                +  "with furious anger! ");
-            returned = returned + this.computerAction();
+            if (this.rollForPlayerAttackSuccess()) {
+                this.computer.takeHit(20);
+                returned = returned + (this.player.getName() + " hits " + this.computer.getName()
+                    +  "with furious anger! ");
+                returned = returned + this.computerAction();
+            } else {
+                returned = returned + (this.player.getName() + " misses " + this.computer.getName()
+                    +  "with gusto! ");
+                returned = returned + this.computerAction();
+            }
         } else {
             this.player.resetStamina();
             returned = returned + (this.player.getName() 
                 + " is too exhauted to do anything right now! Soo... ");
             returned = returned + this.computerAction();
         }
+        return returned;
+    }
+
+    /**
+     * Performs defense for the player and calls computer's responce.
+     *
+     *<p>Calls functions in and Modifies Player and Computer Instances
+     *  to simulate defense performed.
+     *
+     *@return String result of Action
+     */
+    public String defend() {
+        String returned = "";
+        this.player.resetStamina();
+        this.player.heal();
+        returned = returned + (this.player.getName() 
+                + " rests to recover stamina, healing slightly in the process. ");
+        returned = returned + "But this allows an opening... ";
+        returned = returned + this.computerAction();
         return returned;
     }
 
@@ -74,9 +99,14 @@ public class Fight {
         String returned = "";
         if (this.computer.getCurrentStamina() > 0) {
             this.computer.makeHit();
-            this.player.takeHit(20);
-            returned = returned + (this.computer.getName() + " hits " + this.player.getName()
-                +  "with furious anger! ");
+            if (this.rollForComputerAttackSuccess()) {
+                this.player.takeHit(20);
+                returned = returned + (this.computer.getName() + " hits " + this.player.getName()
+                    +  "with furious anger! ");
+            } else {
+                returned = returned + (this.computer.getName() + " misses " + this.player.getName()
+                    +  "with gusto! ");
+            }
         } else {
             this.computer.resetStamina();
             this.computer.heal();
@@ -84,6 +114,71 @@ public class Fight {
                 + " rests to recover stamina, healing slightly in the process.");
         }
         return returned;
+    }
+
+    /**
+     * Rolls to see if player attack successful.
+     *
+     *<p>Rolls die and applies hit chance and stamina modifiers, getting a total
+     * which is checked against the opponents defense roll.
+     *
+     *@return boolean result of attack
+     */
+    public boolean rollForPlayerAttackSuccess() {
+        int roll = this.dice.roll();
+        roll = roll + this.player.getHitChance() + (this.player.getCurrentStamina());
+        if (roll > this.rollForComputerDefense()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    
+    /**
+     * Rolls to see if computer attack successful.
+     *
+     *<p>Rolls die and applies hit chance and stamina modifiers, getting a total
+     * which is checked against the opponents defense roll.
+     *
+     *@return boolean result of attack
+     */
+    public boolean rollForComputerAttackSuccess() {
+        int roll = this.dice.roll();
+        roll = roll + this.computer.getHitChance() + (this.computer.getCurrentStamina());
+        if (roll > this.rollForPlayerDefense()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Rolls for players defensive capability.
+     *
+     *<p>Rolls die and applies defense and stamina modifiers, getting a total
+     * which is returned to th opponents attack roll.
+     *
+     *@return int result of dice roll and stat modifiers
+     */
+    public int rollForPlayerDefense() {
+        int roll = this.dice.roll();
+        roll = roll + this.player.getDefense() + (this.player.getCurrentStamina());
+        return roll;
+    }
+
+    /**
+     * Rolls for computers defensive capability.
+     *
+     *<p>Rolls die and applies defense and stamina modifiers, getting a total
+     * which is returned to th opponents attack roll.
+     *
+     *@return int result of dice roll and stat modifiers
+     */
+    public int rollForComputerDefense() {
+        int roll = this.dice.roll();
+        roll = roll + this.computer.getDefense() + (this.computer.getCurrentStamina());
+        return roll;
     }
 
     /**
