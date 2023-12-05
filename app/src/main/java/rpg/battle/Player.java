@@ -4,7 +4,7 @@ import enums.Talents;
 import me.MyCharacter;
 
 /**
- * Represents the player character used in a particular.
+ * Represents a player character used in a particular.
  * instance of the fight.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
@@ -130,7 +130,20 @@ public class Player {
      *
      */
     public void resetStamina() {
-        this.stamina = this.myCharacter.getStamina();
+        this.stamina = this.getTotalStamina();
+    }
+
+    /**
+     * Slightly heals Character.
+     *
+     *<p>Used when player defends.
+     *
+     */
+    public void heal() {
+        this.health = this.health + 5;
+        if (this.health > this.getTotalHealth()) {
+            this.health = this.getTotalHealth();
+        }
     }
 
     /**

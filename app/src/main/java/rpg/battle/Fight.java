@@ -21,11 +21,8 @@ import races.Human;
 public class Fight {
 
     private Player player;
-    private static Dice dice = new Dice();
+    private Dice dice;
     private Player computer;
-    private boolean initiative;
-    private boolean over;
-    private Player winner;
 
     /**
      * Constructor.
@@ -35,15 +32,13 @@ public class Fight {
      * @param player MyCharacter Instance representing player
      */
     public Fight(Player player) {
+        this.dice = new Dice();
         this.player = player;
         this.computer = Fight.randomEnemy();
-        this.over = false;
-        this.initiative = Fight.rollForInitiative();
-        this.winner = null;
     }
 
     /**
-     * Performs an attack for the player and performs computer's responce.
+     * Performs an attack for the player and calls computer's responce.
      *
      *<p>Calls functions in and Modifies Player and Computer Instances
      *  to simulate attack performed.
@@ -52,20 +47,77 @@ public class Fight {
      */
     public String attack() {
         String returned = "";
-        this.initiative = false;
         if (this.player.getCurrentStamina() > 0) {
             this.player.makeHit();
             this.computer.takeHit(20);
             returned = returned + (this.player.getName() + " hits " + this.computer.getName()
                 +  "with furious anger! ");
-            //returned = returned + this.computerAction(); 
+            returned = returned + this.computerAction();
         } else {
             this.player.resetStamina();
             returned = returned + (this.player.getName() 
-                + " is to exhauted to do anything right now!");
-            //returned = returned + this.computerAction();
+                + " is too exhauted to do anything right now! Soo... ");
+            returned = returned + this.computerAction();
         }
         return returned;
+    }
+
+    /**
+     * Performs an action for the computer.
+     *
+     *<p>Calls functions in and Modifies Player and Computer Instances
+     *  to simulate action performed.
+     *
+     *@return String result of Action
+     */
+    public String computerAction() {
+        String returned = "";
+        if (this.computer.getCurrentStamina() > 0) {
+            this.computer.makeHit();
+            this.player.takeHit(20);
+            returned = returned + (this.computer.getName() + " hits " + this.player.getName()
+                +  "with furious anger! ");
+        } else {
+            this.computer.resetStamina();
+            this.computer.heal();
+            returned = returned + (this.computer.getName() 
+                + " rests to recover stamina, healing slightly in the process.");
+        }
+        return returned;
+    }
+
+    /**
+     * Checks to see if the fight is over.
+     *
+     *<p>Finds out if either player has zero health left.
+     *
+     *@return boolean over or not
+     */
+    public boolean checkIfOver() {
+        if (this.player.getCurrentHealth() <= 0 || this.computer.getCurrentHealth() <= 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
+     * Gets the result of the game.
+     *
+     *<p>Finds the winning party and returns an appropriate statement,
+     * or, in case of a draw, gives the tragic news.
+     *
+     *@return String result of the game
+     */
+    public String getResultOfGame() {
+        if (this.player.getCurrentHealth() > 0 && this.computer.getCurrentHealth() <= 0) {
+            return this.player.getName() + "won!";
+        } else if (this.computer.getCurrentHealth() > 0 && this.player.getCurrentHealth() <= 0) {
+            return this.computer.getName() + "won!";
+        } else {
+            return "Both parties fought to their end, and what a tragic one it was...";
+        }
     }
 
 
@@ -77,7 +129,7 @@ public class Fight {
      *
      *@return Computer enemy chosen
      */
-    public static Computer randomEnemy() {
+    public static Player randomEnemy() {
         MyCharacter morrigan = new MyCharacter("Morrigan");
         morrigan.setCharacterClass(new Mage());
         morrigan.setTalent(Talents.TALL);
@@ -96,25 +148,8 @@ public class Fight {
         possibleEnemies[2] = zevran;
         Random randomNumGen = new Random();
         int randomNumber = randomNumGen.nextInt(3);
-        Computer enemy = new Computer(possibleEnemies[randomNumber]);
+        Player enemy = new Player(possibleEnemies[randomNumber]);
         return enemy;
     }
-
-    /**
-     * Rolls dice to determine who goes first(Has Initiative).
-     *
-     *
-     *@return boolean wether player has initiative or not
-     */
-    public static boolean rollForInitiative() {
-        int playerValue = Fight.dice.roll();
-        int computerValue = Fight.dice.roll();
-        if (playerValue >= computerValue) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     
 }
