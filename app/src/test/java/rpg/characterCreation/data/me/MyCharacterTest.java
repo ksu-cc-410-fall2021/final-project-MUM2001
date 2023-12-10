@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import classes.CharacterClass;
 import classes.Mage;
+import classes.Rogue;
+import classes.Warrior;
 import data.Character;
 import enums.Talents;
 import java.lang.IllegalArgumentException;
@@ -16,6 +18,8 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import races.Dwarf;
+import races.Elf;
+import races.Human;
 import races.Race;
 
 /** 
@@ -98,6 +102,16 @@ public class MyCharacterTest {
     }
 
     @Test 
+    public void testSetNewCharacterClassSetsCorrectNewCharacterClass() {
+        MyCharacter rk = new MyCharacter("");
+        Mage m = new Mage();
+        Warrior n = new Warrior();
+        rk.setCharacterClass(m);
+        rk.setCharacterClass(n);
+        assertTrue(rk.getCharacterClass().equals(n));
+    }
+
+    @Test 
     public void testSetRaceSetsCorrectRace() {
         MyCharacter rk = new MyCharacter("");
         Dwarf m = new Dwarf();
@@ -108,7 +122,7 @@ public class MyCharacterTest {
     @Test 
     public void testClearCharacterResetsHealthToBaseLevel() {
         MyCharacter rk = new MyCharacter("");
-        Dwarf m = new Dwarf();
+        Elf m = new Elf();
         rk.setRace(m);
         rk.clearCharacter();
         assertTrue(rk.getHealth() == 100);
@@ -127,7 +141,9 @@ public class MyCharacterTest {
     public void testClearCharacterResetsHitChanceToBaseLevel() {
         MyCharacter rk = new MyCharacter("");
         Dwarf m = new Dwarf();
+        Warrior w = new Warrior();
         rk.setRace(m);
+        rk.setCharacterClass(w);
         rk.clearCharacter();
         assertTrue(rk.getHitChance() == 50);
     }
@@ -136,7 +152,9 @@ public class MyCharacterTest {
     public void testClearCharacterResetsDefenseToBaseLevel() {
         MyCharacter rk = new MyCharacter("");
         Dwarf m = new Dwarf();
+        Rogue w = new Rogue();
         rk.setRace(m);
+        rk.setCharacterClass(w);
         rk.clearCharacter();
         assertTrue(rk.getDefense() == 50);
     }
