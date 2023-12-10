@@ -35,6 +35,15 @@ public class Player {
     }
 
     /*
+     * Get MyCharacter.
+     *
+     * @return MyCharacter instance of character
+     */
+    public MyCharacter getMyCharacter() {
+        return this.myCharacter;
+    }
+
+    /*
      * Get name.
      *
      * @return String name of character

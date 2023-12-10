@@ -120,6 +120,16 @@ public class MyCharacterTest {
     }
 
     @Test 
+    public void testSetNewRaceSetsCorrectNewRace() {
+        MyCharacter rk = new MyCharacter("");
+        Dwarf m = new Dwarf();
+        Elf n = new Elf();
+        rk.setRace(m);
+        rk.setRace(n);
+        assertTrue(rk.getRace().equals(n));
+    }
+
+    @Test 
     public void testClearCharacterResetsHealthToBaseLevel() {
         MyCharacter rk = new MyCharacter("");
         Elf m = new Elf();
@@ -201,5 +211,80 @@ public class MyCharacterTest {
         assertTrue(rk.getTalent().equals(Talents.MARATHON_RUNNER));
         assertTrue(rk.getStamina() == 110);
         assertTrue(rk.getHitChance() == 40);
+    }
+
+    /** 
+    * The testsTalentChangedCorrectly method.
+    *
+    *
+    *@param talent Talents enum
+    */
+    @ParameterizedTest
+    @EnumSource(Talents.class)
+    public void testChangeTalentChangesTalentMarathonRunner(Talents talent) {
+        MyCharacter rk = new MyCharacter("");
+        rk.setTalent(Talents.MARATHON_RUNNER);
+        rk.setTalent(talent);
+        assertTrue(rk.getTalent().equals(talent));
+    }
+
+    /** 
+    * The testsTalentChangedCorrectly method.
+    *
+    *
+    *@param talent Talents enum
+    */
+    @ParameterizedTest
+    @EnumSource(Talents.class)
+    public void testChangeTalentChangesTalentFastTwitch(Talents talent) {
+        MyCharacter rk = new MyCharacter("");
+        rk.setTalent(Talents.FAST_TWITCH);
+        rk.setTalent(talent);
+        assertTrue(rk.getTalent().equals(talent));
+    }
+
+    /** 
+    * The testsTalentChangedCorrectly method.
+    *
+    *
+    *@param talent Talents enum
+    */
+    @ParameterizedTest
+    @EnumSource(Talents.class)
+    public void testChangeTalentChangesTalentTall(Talents talent) {
+        MyCharacter rk = new MyCharacter("");
+        rk.setTalent(Talents.TALL);
+        rk.setTalent(talent);
+        assertTrue(rk.getTalent().equals(talent));
+    }
+
+    /** 
+    * The testsTalentChangedCorrectly method.
+    *
+    *
+    *@param talent Talents enum
+    */
+    @ParameterizedTest
+    @EnumSource(Talents.class)
+    public void testChangeTalentChangesTalentStocky(Talents talent) {
+        MyCharacter rk = new MyCharacter("");
+        rk.setTalent(Talents.STOCKY);
+        rk.setTalent(talent);
+        assertTrue(rk.getTalent().equals(talent));
+    }
+
+    /** 
+    * The testsTalentChangedCorrectly method(LeftHander).
+    *
+    *
+    *@param talent Talents enum
+    */
+    @ParameterizedTest
+    @EnumSource(Talents.class)
+    public void testChangeTalentChangesTalentLeftHanded(Talents talent) {
+        MyCharacter rk = new MyCharacter("");
+        rk.setTalent(Talents.LEFT_HANDER);
+        rk.setTalent(talent);
+        assertTrue(rk.getTalent().equals(talent));
     }
 }
