@@ -194,7 +194,29 @@ public class Fight {
         } else {
             return false;
         }
+    }
 
+    /**
+     * Sets Computer Health to Zero.
+     *
+     *<p>This Method is for testing purposes only.
+     *
+     */
+    public void killComputer() {
+        this.computer.takeHit(this.computer.getTotalHealth());
+    }
+
+
+    /**
+     * Sets Computer Stamina to Zero.
+     *
+     *<p>This Method is for testing purposes only.
+     *
+     */
+    public void exhaustComputer() {
+        while (this.computer.getCurrentStamina() > 0) {
+            this.computer.makeHit();
+        }
     }
 
     /**
@@ -207,9 +229,9 @@ public class Fight {
      */
     public String getResultOfGame() {
         if (this.player.getCurrentHealth() > 0 && this.computer.getCurrentHealth() <= 0) {
-            return this.player.getName() + "won!";
+            return this.player.getName() + " won!";
         } else if (this.computer.getCurrentHealth() > 0 && this.player.getCurrentHealth() <= 0) {
-            return this.computer.getName() + "won!";
+            return this.computer.getName() + " won!";
         } else {
             return "Both parties fought to their end, and what a tragic one it was...";
         }

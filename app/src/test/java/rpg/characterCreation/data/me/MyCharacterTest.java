@@ -17,6 +17,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.Mock;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 import races.Dwarf;
 import races.Elf;
 import races.Human;
@@ -31,6 +36,9 @@ import races.Race;
  * @version 0.1
  */
 public class MyCharacterTest {
+
+    @Mock
+    Talents mockTalent;
 
     @Test 
     public void testDefaultConstructorValueNameIsNull() {

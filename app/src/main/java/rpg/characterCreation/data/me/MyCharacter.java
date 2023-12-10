@@ -149,7 +149,6 @@ public class MyCharacter {
                     }
                 }
             }
-            //
         }
         this.talent = talent;
         if (talent.equals(Talents.LEFT_HANDER)) {
