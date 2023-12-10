@@ -5,6 +5,7 @@ import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import classes.CharacterClass;
 import enums.Talents;
 import me.MyCharacter;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
+import races.Race;
 
 
 /** 
@@ -28,6 +30,12 @@ public class PlayerTest {
 
     @Mock
     MyCharacter mockCharacter;
+
+    @Mock
+    Race mockRace;
+
+    @Mock
+    CharacterClass mockCharacterClass;
 
     @Mock
     Talents mockTalent;
@@ -62,6 +70,139 @@ public class PlayerTest {
         when(mockCharacter.getDefense()).thenReturn(50);
         Player player = new Player(mockCharacter);
         assertTrue(player.getCurrentHealth() == 100);
+    }
+
+    @Test
+    public void testPlayerGetCurrentHealthReturnsCorrectPostHitHealth() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        Player player = new Player(mockCharacter);
+        player.takeHit(20);
+        assertTrue(player.getCurrentHealth() == 80);
+    }
+
+    @Test
+    public void testPlayerGetCurrentStaminaReturnsCorrectStartingStamina() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        Player player = new Player(mockCharacter);
+        assertTrue(player.getCurrentStamina() == 100);
+    }
+
+    @Test
+    public void testPlayerGetCurrentStaminaReturnsCorrectPostHitStamina() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        Player player = new Player(mockCharacter);
+        player.makeHit();
+        assertTrue(player.getCurrentStamina() == 80);
+    }
+
+    @Test
+    public void testPlayerResetStaminaProperlyResetsStamina() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        Player player = new Player(mockCharacter);
+        player.makeHit();
+        player.makeHit();
+        player.makeHit();
+        player.resetStamina();
+        assertTrue(player.getCurrentStamina() == 100);
+    }
+
+    @Test
+    public void testPlayerHealRefillsHealthToBySetAmount() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        Player player = new Player(mockCharacter);
+        player.takeHit(20);
+        player.heal();
+        assertTrue(player.getCurrentHealth() == 85);
+    }
+
+    @Test
+    public void testPlayerHealDoesNotSetHealthOverMax() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        Player player = new Player(mockCharacter);
+        player.heal();
+        assertTrue(player.getCurrentHealth() == 100);
+    }
+
+    @Test
+    public void testPlayerValidMethodReturnsTrueIfAllAtributesNotNull() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        when(mockCharacter.getName()).thenReturn("Mike");
+        when(mockCharacter.getRace()).thenReturn(mockRace);
+        when(mockCharacter.getCharacterClass()).thenReturn(mockCharacterClass);
+        when(mockCharacter.getTalent()).thenReturn(mockTalent);
+        Player player = new Player(mockCharacter);
+        assertTrue(player.valid() == true);
+    }
+
+    @Test
+    public void testPlayerValidMethodReturnsFalseIfNameNull() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        when(mockCharacter.getName()).thenReturn(null);
+        Player player = new Player(mockCharacter);
+        assertTrue(player.valid() == false);
+    }
+
+    @Test
+    public void testPlayerValidMethodReturnsFalseIfRaceNull() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        when(mockCharacter.getName()).thenReturn("mike");
+        when(mockCharacter.getRace()).thenReturn(null);
+        Player player = new Player(mockCharacter);
+        assertTrue(player.valid() == false);
+    }
+
+    @Test
+    public void testPlayerValidMethodReturnsFalseIfCharacterClassNull() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        when(mockCharacter.getName()).thenReturn("Mike");
+        when(mockCharacter.getRace()).thenReturn(mockRace);
+        when(mockCharacter.getCharacterClass()).thenReturn(null);
+        Player player = new Player(mockCharacter);
+        assertTrue(player.valid() == false);
+    }
+
+    @Test
+    public void testPlayerValidMethodReturnsFalseIfTalentNull() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        when(mockCharacter.getName()).thenReturn("Mike");
+        when(mockCharacter.getRace()).thenReturn(mockRace);
+        when(mockCharacter.getCharacterClass()).thenReturn(mockCharacterClass);
+        when(mockCharacter.getTalent()).thenReturn(null);
+        Player player = new Player(mockCharacter);
+        assertTrue(player.valid() == false);
     }
 
     /**
