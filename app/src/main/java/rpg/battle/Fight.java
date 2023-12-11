@@ -54,17 +54,17 @@ public class Fight {
             if (this.rollForPlayerAttackSuccess()) {
                 this.computer.takeHit(20);
                 returned = returned + (this.player.getName() + " hits " + this.computer.getName()
-                    +  "with furious anger! ");
+                    +  " .\n");
                 returned = returned + this.computerAction();
             } else {
                 returned = returned + (this.player.getName() + " misses " + this.computer.getName()
-                    +  "with gusto! ");
+                    +  " .\n");
                 returned = returned + this.computerAction();
             }
         } else {
             this.player.resetStamina();
             returned = returned + (this.player.getName() 
-                + " is too exhauted to do anything right now! Soo... ");
+                + " is too exhauted to do anything right now! Soo... \n");
             returned = returned + this.computerAction();
         }
         return returned;
@@ -83,8 +83,8 @@ public class Fight {
         this.player.resetStamina();
         this.player.heal();
         returned = returned + (this.player.getName() 
-                + " rests to recover stamina, healing slightly in the process. ");
-        returned = returned + "But this allows an opening... ";
+                + " rests to recover stamina, healing slightly in the process.\n ");
+        returned = returned + "But this allows an opening... \n";
         returned = returned + this.computerAction();
         return returned;
     }
@@ -104,16 +104,16 @@ public class Fight {
             if (this.rollForComputerAttackSuccess()) {
                 this.player.takeHit(20);
                 returned = returned + (this.computer.getName() + " hits " + this.player.getName()
-                    +  "with furious anger! ");
+                    +  " .\n");
             } else {
                 returned = returned + (this.computer.getName() + " misses " + this.player.getName()
-                    +  "with gusto! ");
+                    +  " .\n");
             }
         } else {
             this.computer.resetStamina();
             this.computer.heal();
             returned = returned + (this.computer.getName() 
-                + " rests to recover stamina, healing slightly in the process.");
+                + " rests to recover stamina, healing slightly in the process.\n");
         }
         return returned;
     }
