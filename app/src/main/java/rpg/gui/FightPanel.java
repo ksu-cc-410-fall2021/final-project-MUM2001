@@ -54,8 +54,9 @@ public class FightPanel extends JPanel implements ActionListener {
      * 
      */
     public FightPanel(PrimaryWindow parent, Player player) {
+        //500, 600
         this.parent = parent;
-        this.setPreferredSize(new Dimension(500, 600));
+        this.setPreferredSize(new Dimension(800, 650));
         this.setLayout(new GridBagLayout());
         if (player.valid()) {
             this.player = player;

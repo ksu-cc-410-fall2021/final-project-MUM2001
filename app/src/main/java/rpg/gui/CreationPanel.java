@@ -47,8 +47,9 @@ public class CreationPanel extends JPanel implements ActionListener {
      * 
      */
     public CreationPanel(PrimaryWindow parent) {
+        //500,600
         this.parent = parent;
-        this.setPreferredSize(new Dimension(500, 600));
+        this.setPreferredSize(new Dimension(800, 650));
         this.setLayout(new GridBagLayout());
         int i = 0;
     
@@ -164,6 +165,8 @@ public class CreationPanel extends JPanel implements ActionListener {
      * actionPerformed.
      *
      *<p>ActionListener that loads appropriate panel from button press.
+     *
+     *@param event ActionEvent
      */
     @Override
     public void actionPerformed(ActionEvent event) {

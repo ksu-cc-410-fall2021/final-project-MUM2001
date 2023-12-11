@@ -280,6 +280,7 @@ public class FightTest {
     }
 
 
+
     /**
      * Test Fight Random Enemy Method Sets Enemy Correctly.
      */

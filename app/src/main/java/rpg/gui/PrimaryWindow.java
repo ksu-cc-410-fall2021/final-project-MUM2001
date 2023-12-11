@@ -32,7 +32,8 @@ public class PrimaryWindow extends JFrame {
      * 
      */
     public PrimaryWindow() {
-        this.setPreferredSize(new Dimension(800, 600));
+        //800, 600
+        this.setPreferredSize(new Dimension(1100, 650));
         this.setTitle("RPG");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new GridBagLayout());

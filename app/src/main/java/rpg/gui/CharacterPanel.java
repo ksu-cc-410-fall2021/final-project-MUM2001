@@ -45,8 +45,9 @@ public class CharacterPanel extends JPanel implements ActionListener {
      * 
      */
     public CharacterPanel(PrimaryWindow parent) {
+        //300, 600
         this.parent = parent;
-        this.setPreferredSize(new Dimension(300, 600));
+        this.setPreferredSize(new Dimension(300, 650));
         this.setLayout(new GridBagLayout());
         this.myCharacter = new MyCharacter("who?");
 
@@ -215,6 +216,18 @@ public class CharacterPanel extends JPanel implements ActionListener {
         fightgbc.fill = GridBagConstraints.BOTH;
         fightgbc.insets = new Insets(2, 2, 2, 2);
         this.add(fight, fightgbc);
+
+        JButton create = new JButton("Create");
+        create.setActionCommand("create");
+        create.addActionListener(this);
+        GridBagConstraints creategbc = new GridBagConstraints();
+        creategbc.gridx = 0;
+        creategbc.gridy = 10;
+        creategbc.gridwidth = 2;
+        creategbc.weightx = 1.0;
+        creategbc.fill = GridBagConstraints.BOTH;
+        creategbc.insets = new Insets(2, 2, 2, 2);
+        this.add(create, creategbc);
     }
 
     /** 
@@ -276,7 +289,10 @@ public class CharacterPanel extends JPanel implements ActionListener {
     /**
      * actionPerformed.
      *
-     *<p>ActionListener, not in use currently.
+     *<p>ActionListener to trigger loading of Fight or Creation Panels
+     *  on button press.
+     *
+     *@param event ActionEvent
      */
     @Override
     public void actionPerformed(ActionEvent event) {
@@ -284,6 +300,8 @@ public class CharacterPanel extends JPanel implements ActionListener {
             Player player = new Player(this.myCharacter);
             FightPanel p = new FightPanel(this.parent, player);
             parent.loadPanel(p);
+        } else if (("create").equals(event.getActionCommand())) {
+            parent.loadCreationPanel();
         }
     }
 }
