@@ -298,7 +298,7 @@ public class CharacterPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         if (("fight").equals(event.getActionCommand())) {
             Player player = new Player(this.myCharacter);
-            FightPanel p = new FightPanel(this.parent, player);
+            FightPanel p = new FightPanel(parent, player);
             parent.loadPanel(p);
         } else if (("create").equals(event.getActionCommand())) {
             parent.loadCreationPanel();

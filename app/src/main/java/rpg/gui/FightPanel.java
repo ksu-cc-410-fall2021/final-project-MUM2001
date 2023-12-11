@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import selectionmenu.SelectionMenu;
@@ -344,7 +345,20 @@ public class FightPanel extends JPanel implements ActionListener {
             this.add(computerDefenseLabel, defensegbc);
 
         } else {
-            //Show PopUp then reload previous panel
+            //Show PopUp and button to reload creation panel 
+
+            JOptionPane.showMessageDialog(this.parent, "Finish Creating Character First!",
+                    "Error!", JOptionPane.ERROR_MESSAGE);
+            JButton reloadButton = new JButton("Reload Creation Panel");
+            reloadButton.setActionCommand("reload");
+            reloadButton.addActionListener(this);
+            GridBagConstraints reloadgbc = new GridBagConstraints();
+            reloadgbc.gridx = 2;
+            reloadgbc.gridy = 3;
+            reloadgbc.weightx = 1.0;
+            reloadgbc.weighty = 1.0;
+            reloadgbc.insets = new Insets(2, 2, 2, 2);
+            this.add(reloadButton, reloadgbc);
         }
 
     }
@@ -385,6 +399,9 @@ public class FightPanel extends JPanel implements ActionListener {
             if (fight.checkIfOver()) {
                 String gameResult = fight.getResultOfGame();
                 //load pop up and reload edit page
+                JOptionPane.showMessageDialog(this.parent, gameResult,
+                        "Who Won?", JOptionPane.INFORMATION_MESSAGE);
+                this.actionPerformed(new ActionEvent(this, 0, "reload"));
             } 
         } else if ("defend".equals(event.getActionCommand())) {
             String results = fight.defend();
@@ -412,7 +429,12 @@ public class FightPanel extends JPanel implements ActionListener {
             if (fight.checkIfOver()) {
                 String gameResult = fight.getResultOfGame();
                 //load pop up and reload edit page
+                JOptionPane.showMessageDialog(this.parent, gameResult,
+                        "Who Won?", JOptionPane.INFORMATION_MESSAGE);
+                this.actionPerformed(new ActionEvent(this, 0, "reload"));
             } 
+        } else if ("reload".equals(event.getActionCommand())) { 
+            parent.loadCreationPanel();
         }
     }
 }

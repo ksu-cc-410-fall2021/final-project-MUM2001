@@ -161,7 +161,7 @@ public class Player {
      * @return boolean Character ready or not
      */
     public boolean valid() {
-        if (this.myCharacter.getName() != null) {
+        if (this.myCharacter.getName() != null && this.myCharacter.getName().length() != 0) {
             if (this.myCharacter.getRace() != null) {
                 if (this.myCharacter.getCharacterClass() != null) {
                     if (this.myCharacter.getTalent() != null) {

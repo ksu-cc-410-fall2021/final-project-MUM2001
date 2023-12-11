@@ -167,6 +167,17 @@ public class PlayerTest {
     }
 
     @Test
+    public void testPlayerValidMethodReturnsFalseIfNameEmpty() {
+        when(mockCharacter.getHealth()).thenReturn(100);
+        when(mockCharacter.getStamina()).thenReturn(100);
+        when(mockCharacter.getHitChance()).thenReturn(50);
+        when(mockCharacter.getDefense()).thenReturn(50);
+        when(mockCharacter.getName()).thenReturn("");
+        Player player = new Player(mockCharacter);
+        assertTrue(player.valid() == false);
+    }
+
+    @Test
     public void testPlayerValidMethodReturnsFalseIfRaceNull() {
         when(mockCharacter.getHealth()).thenReturn(100);
         when(mockCharacter.getStamina()).thenReturn(100);
