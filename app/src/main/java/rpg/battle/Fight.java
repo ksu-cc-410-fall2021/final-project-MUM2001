@@ -1,5 +1,6 @@
 package battle;
 
+import classes.CharacterClass;
 import classes.Mage;
 import classes.Rogue;
 import classes.Warrior;
@@ -9,6 +10,7 @@ import me.MyCharacter;
 import races.Dwarf;
 import races.Elf;
 import races.Human;
+import races.Race;
 
 
 /**
@@ -217,6 +219,78 @@ public class Fight {
         while (this.computer.getCurrentStamina() > 0) {
             this.computer.makeHit();
         }
+    }
+
+    /**
+     * Gets Name of Computer Player.
+     *
+     *
+     */
+    public String getComputerName() {
+        return this.computer.getName();
+    }
+
+    /**
+     * Gets Race of Computer Player.
+     *
+     *
+     */
+    public Race getComputerRace() {
+        return this.computer.getMyCharacter().getRace();
+    }
+
+    /**
+     * Gets Class of Computer Player.
+     *
+     *
+     */
+    public CharacterClass getComputerCharacterClass() {
+        return this.computer.getMyCharacter().getCharacterClass();
+    }
+
+    /**
+     * Gets Talent of Computer Player.
+     *
+     *
+     */
+    public Talents getComputerTalent() {
+        return this.computer.getMyCharacter().getTalent();
+    }
+
+    /**
+     * Gets CurrentHealth of Computer Player.
+     *
+     *
+     */
+    public int getComputerCurrentHealth() {
+        return this.computer.getCurrentHealth();
+    }
+
+    /**
+     * Gets CurrentStamina of Computer Player.
+     *
+     *
+     */
+    public int getComputerCurrentStamina() {
+        return this.computer.getCurrentStamina();
+    }
+
+    /**
+     * Gets HitChance of Computer Player.
+     *
+     *
+     */
+    public int getComputerHitChance() {
+        return this.computer.getHitChance();
+    }
+
+    /**
+     * Gets Defense of Computer Player.
+     *
+     *
+     */
+    public int getComputerDefense() {
+        return this.computer.getDefense();
     }
 
     /**
