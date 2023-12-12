@@ -8,7 +8,7 @@ package races;
  *  with the elven race.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class Elf extends Race {
 
@@ -32,9 +32,8 @@ public class Elf extends Race {
      *<p>Adjusts output to print an accurate description of
      *   the Elven race.
      *
-     *@return String description of Elf
+     *@return String description of an Elf
      */
-
     @Override
     public String toString() {
         return "Elf";

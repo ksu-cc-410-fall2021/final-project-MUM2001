@@ -14,10 +14,13 @@ import races.Race;
 
 
 /**
- * Represents a MainWindow.
+ * Represents a PrimaryWindow.
+ *
+ *<p>Window serves as base to load rest of gui. Also contains methods
+ *  to facilitate interaction between Character and Creation Panels.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
- * @version: 0.1
+ * @version: 1.0
  */
 public class PrimaryWindow extends JFrame {
 
@@ -28,11 +31,11 @@ public class PrimaryWindow extends JFrame {
      * Constructor.
      *
      *<p>Builds the PrimaryWindow in which all other Panels
-     *  load.
+     *  load into. Automatically loads Creation and Character Panels
+     *  at object creation.
      * 
      */
     public PrimaryWindow() {
-        //800, 600
         this.setPreferredSize(new Dimension(1100, 650));
         this.setTitle("RPG");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,7 +61,9 @@ public class PrimaryWindow extends JFrame {
     /**
      * loadCreationPanel.
      *
-     *<p>Loads a Creation Screen into Main Panel.
+     *<p>Loads a Creation Screen into Main Panel. Calls
+     *  Load Panel Method with Creation Panel as argument
+     *  and this window as parent.
      * 
      */
     public void loadCreationPanel() {
@@ -68,7 +73,9 @@ public class PrimaryWindow extends JFrame {
     /**
      * LoadPanel.
      *
-     *<p>Loads another Panel.
+     *<p>Loads another Panel in place of the main Panel.
+     *  JPanel parameter is loaded and set as the main Panel
+     *  in the window.
      *
      *@param panel JPanel to load
      */
@@ -92,6 +99,8 @@ public class PrimaryWindow extends JFrame {
     /** 
     * The changeTalent method.
     *
+    *<p>Calls changeTalent() method in CharacterPanel to modify
+    *   character and gui representation.
     *
     *@param talent Talents
     */
@@ -102,6 +111,8 @@ public class PrimaryWindow extends JFrame {
     /** 
     * The changeRace method.
     *
+    *<p>Calls changeRace() method in CharacterPanel to modify
+    *   character and gui representation.
     *
     *@param race Race
     */
@@ -112,6 +123,8 @@ public class PrimaryWindow extends JFrame {
     /** 
     * The changeCharacterClass method.
     *
+    *<p>Calls changeCharacterClass() method in CharacterPanel to modify
+    *   character and gui representation.
     *
     *@param characterClass class
     */
@@ -122,6 +135,8 @@ public class PrimaryWindow extends JFrame {
     /** 
     * The changeName method.
     *
+    *<p>Calls changeName() method in CharacterPanel to modify
+    *   character and gui representation.
     *
     *@param name String
     */

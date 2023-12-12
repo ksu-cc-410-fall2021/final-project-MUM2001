@@ -19,10 +19,13 @@ import me.MyCharacter;
 import races.Race;
 
 /**
- * Represents the Character/Sidebar Panel.
+ * Represents the Character Panel(Sidebar).
+ *
+ *<p>Loads gui elements to display information and allow interaction
+ *  from the user on the underlying data structures.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
- * @version: 0.1
+ * @version: 1.0
  */
 public class CharacterPanel extends JPanel implements ActionListener {
 
@@ -41,11 +44,12 @@ public class CharacterPanel extends JPanel implements ActionListener {
     /**
      * Constructor.
      *
-     *<p>Constructs the Character Side Panel.
-     * 
+     *<p>Constructs the Character Side Panel with Primary Window as parent
+     *  given as parameter.
+     *
+     *@param parent PrimaryWindow to serve as parent window
      */
     public CharacterPanel(PrimaryWindow parent) {
-        //300, 600
         this.parent = parent;
         this.setPreferredSize(new Dimension(300, 650));
         this.setLayout(new GridBagLayout());
@@ -233,8 +237,10 @@ public class CharacterPanel extends JPanel implements ActionListener {
     /** 
     * The changeTalent method.
     *
+    *<p>Calls the setTalent() method of MyCharacter and changes
+    *   text appropriately to reflect the Talent.
     *
-    *@param talent Talents
+    *@param talent Talents to be set
     */
     public void changeTalent(Talents talent) {
         this.myCharacter.setTalent(talent);
@@ -248,8 +254,10 @@ public class CharacterPanel extends JPanel implements ActionListener {
     /** 
     * The changeRace method.
     *
+    *<p>Calls the setRace() method of MyCharacter and changes
+    *   text appropriately to reflect the Race.
     *
-    *@param race Race
+    *@param race Race to be set
     */
     public void changeRace(Race race) {
         this.myCharacter.setRace(race);
@@ -263,8 +271,10 @@ public class CharacterPanel extends JPanel implements ActionListener {
     /** 
     * The changeCharacterClass method.
     *
+    *<p>Calls the setCharacterClass() method of MyCharacter and changes
+    *   text appropriately to reflect the CharacterClass.
     *
-    *@param characterClass class
+    *@param characterClass class to be set
     */
     public void changeCharacterClass(CharacterClass characterClass) {
         this.myCharacter.setCharacterClass(characterClass);
@@ -278,6 +288,8 @@ public class CharacterPanel extends JPanel implements ActionListener {
     /** 
     * The changeName method.
     *
+    *<p>Calls the setName() method of MyCharacter and changes
+    *   text appropriately to reflect the Name.
     *
     *@param name String
     */

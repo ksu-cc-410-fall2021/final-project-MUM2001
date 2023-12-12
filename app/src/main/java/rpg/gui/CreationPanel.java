@@ -30,10 +30,10 @@ import selectionmenu.SelectionMenu;
 /**
  * Represents a CreationPanel.
  *
- *<p>Panel to create a character in.
+ *<p>Loads gui Panel to create a character in.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
- * @version: 0.1
+ * @version: 1.0
  */
 public class CreationPanel extends JPanel implements ActionListener {
 
@@ -43,11 +43,11 @@ public class CreationPanel extends JPanel implements ActionListener {
     /**
      * Constructor.
      *
-     *<p>Builds the Creation Panel.
-     * 
+     *<p>Builds the Creation Panel with Primary Window parameter as parent.
+     *
+     *@param parent PrimaryWindow to serve as parent window
      */
     public CreationPanel(PrimaryWindow parent) {
-        //500,600
         this.parent = parent;
         this.setPreferredSize(new Dimension(800, 650));
         this.setLayout(new GridBagLayout());
@@ -57,11 +57,7 @@ public class CreationPanel extends JPanel implements ActionListener {
         classLabelgbc.gridx = 0;
         classLabelgbc.gridy = i;
         i += 1;
-        //raceLabelgbc.weightx = 1.0;
-        //raceLabelgbc.weighty = 1.0;
-        //raceLabelgbc.fill = GridBagConstraints.BOTH;
         classLabelgbc.insets = new Insets(2, 2, 2, 2);
-        //raceLabelgbc.anchor = GridBagConstraints.LINE_START;
         JLabel classLabel = new JLabel("Class:");
         this.add(classLabel, classLabelgbc);
         for (Character character : SelectionMenu.getCharacterClasses()) {
@@ -84,9 +80,7 @@ public class CreationPanel extends JPanel implements ActionListener {
         i += 1;
         namelabelgbc.weightx = 1.0;
         namelabelgbc.weighty = 1.0;
-        //namelabelgbc.fill = GridBagConstraints.BOTH;
         namelabelgbc.insets = new Insets(2, 2, 2, 2);
-        //namelabelgbc.anchor = GridBagConstraints.LINE_START;
         JLabel namelabel = new JLabel("Name:");
         this.add(namelabel, namelabelgbc);
 
@@ -109,11 +103,7 @@ public class CreationPanel extends JPanel implements ActionListener {
         raceLabelgbc.gridx = 1;
         raceLabelgbc.gridy = i;
         i += 1;
-        //raceLabelgbc.weightx = 1.0;
-        //raceLabelgbc.weighty = 1.0;
-        //raceLabelgbc.fill = GridBagConstraints.BOTH;
         raceLabelgbc.insets = new Insets(2, 2, 2, 2);
-        //raceLabelgbc.anchor = GridBagConstraints.LINE_START;
         JLabel raceLabel = new JLabel("Race:");
         this.add(raceLabel, raceLabelgbc);
         for (Character character : SelectionMenu.getRaces()) {
@@ -136,11 +126,7 @@ public class CreationPanel extends JPanel implements ActionListener {
         talentLabelgbc.gridx = 2;
         talentLabelgbc.gridy = i;
         i += 1;
-        //talentLabelgbc.weightx = 1.0;
-        //talentLabelgbc.weighty = 1.0;
-        //talentLabelgbc.fill = GridBagConstraints.BOTH;
         talentLabelgbc.insets = new Insets(2, 2, 2, 2);
-        //talentLabelgbc.anchor = GridBagConstraints.LINE_START;
         JLabel talentLabel = new JLabel("Talent:");
         this.add(talentLabel, talentLabelgbc);
         for (Talents t : Talents.values()) {
@@ -164,54 +150,43 @@ public class CreationPanel extends JPanel implements ActionListener {
     /**
      * actionPerformed.
      *
-     *<p>ActionListener that loads appropriate panel from button press.
+     *<p>ActionListener that changes appropriate attribute from button press.
      *
      *@param event ActionEvent
      */
     @Override
     public void actionPerformed(ActionEvent event) {
         if ("Left Hander".equals(event.getActionCommand())) {
-            //System.out.println("Left");
             Talents t = Talents.LEFT_HANDER;
             this.parent.changeTalent(t);
         } else if ("Stocky".equals(event.getActionCommand())) {
-            //System.out.println("Stocky");
             Talents t = Talents.STOCKY;
             this.parent.changeTalent(t);
         } else if ("Tall".equals(event.getActionCommand())) {
-            //System.out.println("Tall");
             Talents t = Talents.TALL;
             this.parent.changeTalent(t);
         } else if ("Fast Twitch".equals(event.getActionCommand())) {
-            //System.out.println("Fast Twitch");
             Talents t = Talents.FAST_TWITCH;
             this.parent.changeTalent(t);
         } else if ("Marathon Runner".equals(event.getActionCommand())) {
-            //System.out.println("Marathon Runner");
             Talents t = Talents.MARATHON_RUNNER;
             this.parent.changeTalent(t);
         } else if ("Human".equals(event.getActionCommand())) {
-            //System.out.println("Human");
             Race r = new Human();
             this.parent.changeRace(r);
         } else if ("Elf".equals(event.getActionCommand())) {
-            //System.out.println("Elf");
             Race r = new Elf();
             this.parent.changeRace(r);
         } else if ("Dwarf".equals(event.getActionCommand())) {
-            //System.out.println("Dwarf");
             Race r = new Dwarf();
             this.parent.changeRace(r);
         } else if ("Warrior".equals(event.getActionCommand())) {
-            //System.out.println("Warrior");
             CharacterClass c = new Warrior();
             this.parent.changeCharacterClass(c);
         } else if ("Rogue".equals(event.getActionCommand())) {
-            //System.out.println("Rogue");
             CharacterClass c = new Rogue();
             this.parent.changeCharacterClass(c);
         } else if ("Mage".equals(event.getActionCommand())) {
-            //System.out.println("Mage");
             CharacterClass c = new Mage();
             this.parent.changeCharacterClass(c);
         } else if ("Name".equals(event.getActionCommand())) {

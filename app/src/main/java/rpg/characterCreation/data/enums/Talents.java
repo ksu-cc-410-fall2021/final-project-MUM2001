@@ -1,13 +1,13 @@
 package enums;
 
 /** 
- * The Talent class(representation of character perks).
+ * The Talents class(representation of character perks/talents).
  *
  * <p>This class is an enumeration of the various talents
  *    available for characters.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public enum Talents {
     LEFT_HANDER("Left Hander"),
@@ -34,7 +34,7 @@ public enum Talents {
      *Overide method of toString().
      *
      *<p>Modifies the Talent standard toString() method in order to
-     *   more accurately describe the enumeration.
+     *   accurately describe the enumeration.
      *
      *
      *@return String the description

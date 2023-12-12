@@ -1,13 +1,13 @@
 package classes;
 
 /** 
- * The Mage class(representation of mage character class).
+ * The Mage class(representation of the mage character class).
  *
  * <p>This class contains the numerical bonuses associated 
- *  with a mage archetype.
+ *  with the mage archetype.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class Mage extends CharacterClass {
 
@@ -16,7 +16,7 @@ public class Mage extends CharacterClass {
      * Constructor for the Mage class.
      *
      *<p>Sets the appropriate modifiers to a character's
-     *  attributes for a mage archetype.
+     *  attributes for the mage archetype.
      *
      */
     public Mage() {
@@ -27,10 +27,9 @@ public class Mage extends CharacterClass {
     }
 
     /**
-     *Overide method to redefine toString() method.
+     *Override method to redefine toString() method.
      *
-     *<p>Adjusts output to print an accurate description of
-     *   the Mage class.
+     *<p>Adjusts output to print name of the Mage class.
      *
      *@return String description of Mage
      */

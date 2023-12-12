@@ -4,13 +4,14 @@ import data.Character;
 
 
 /** 
- * The CharacterClass class(representation of character's Class).
+ * The CharacterClass Class(representation of character's class).
  *
- * <p>This class is an enumeration of the various CharacterClasses
- *    available for players.
+ *<p>This class is an abstract base of the various CharacterClasses
+ *   available for players. All other character classes inherit from
+ *  this abstract class.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public abstract class CharacterClass implements Character {
 

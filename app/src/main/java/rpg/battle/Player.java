@@ -8,7 +8,7 @@ import me.MyCharacter;
  * instance of the fight.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
- * @version: 0.1
+ * @version: 1.0
  */
 public class Player {
 

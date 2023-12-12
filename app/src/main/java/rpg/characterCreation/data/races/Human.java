@@ -8,7 +8,7 @@ package races;
  *  with the human race.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class Human extends Race {
 
@@ -34,7 +34,6 @@ public class Human extends Race {
      *
      *@return String description of Human
      */
-
     @Override
     public String toString() {
         return "Human";

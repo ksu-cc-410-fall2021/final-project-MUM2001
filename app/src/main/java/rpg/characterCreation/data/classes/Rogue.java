@@ -5,10 +5,10 @@ package classes;
  * The Rogue class(representation of rogue character class).
  *
  * <p>This class contains the numerical bonuses associated 
- *  with a rogue archetype.
+ *  with the rogue archetype.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class Rogue extends CharacterClass {
 
@@ -16,7 +16,7 @@ public class Rogue extends CharacterClass {
      * Constructor for the Rogue class.
      *
      *<p>Sets the appropriate modifiers to a character's
-     *  attributes for a rogue archetype.
+     *  attributes for the rogue archetype.
      *
      */
     public Rogue() {
@@ -29,12 +29,10 @@ public class Rogue extends CharacterClass {
     /**
      *Overide method to redefine toString() method.
      *
-     *<p>Adjusts output to print an accurate description of
-     *   the Rogue class.
+     *<p>Adjusts output to print the name of the Rogue class.
      *
      *@return String description of Rogue
      */
-
     @Override
     public String toString() {
         return "Rogue";

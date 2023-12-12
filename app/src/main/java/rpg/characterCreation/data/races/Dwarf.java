@@ -8,7 +8,7 @@ package races;
  *  with the dwarven race.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class Dwarf extends Race {
 
@@ -34,7 +34,6 @@ public class Dwarf extends Race {
      *
      *@return String description of Dwarf
      */
-
     @Override
     public String toString() {
         return "Dwarf";

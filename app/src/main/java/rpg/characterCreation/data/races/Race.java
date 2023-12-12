@@ -4,13 +4,13 @@ import data.Character;
 
 
 /** 
- * The Race class(representation of character's race).
+ * The Race class(representation of a character's race).
  *
- * <p>This class is an enumeration of the various races
+ * <p>This class is an abstract base for the various races
  *    available for players to play as.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public abstract class Race implements Character {
 
@@ -26,7 +26,6 @@ public abstract class Race implements Character {
      *
      *@return int the healthModifier 
      */
-
     public int getHealthModifier() {
         return this.healthModifier;
     }
@@ -38,7 +37,6 @@ public abstract class Race implements Character {
      *
      *@return int the staminaModifier 
      */
-
     public int getStaminaModifier() {
         return this.staminaModifier;
     }
@@ -50,7 +48,6 @@ public abstract class Race implements Character {
      *
      *@return int the hitChanceModifier 
      */
-
     public int getHitChanceModifier() {
         return this.hitChanceModifier;
     }
@@ -62,7 +59,6 @@ public abstract class Race implements Character {
      *
      *@return int the defenseModifier 
      */
-
     public int getDefenseModifier() {
         return this.defenseModifier;
     }

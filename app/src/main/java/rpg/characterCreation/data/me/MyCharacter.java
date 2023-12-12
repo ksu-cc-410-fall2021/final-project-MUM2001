@@ -6,10 +6,10 @@ import enums.Talents;
 import races.Race;
 
 /**
- * Represents a player character.
+ * Represents a custom created player character.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
- * @version: 0.1
+ * @version: 1.0
  */
 public class MyCharacter {
 
@@ -46,6 +46,8 @@ public class MyCharacter {
     /**
      * Set name.
      *
+     *<p>Sets name attribute to specified String.
+     *
      * @param name String combo name
      */
     public void setName(String name) {
@@ -55,6 +57,8 @@ public class MyCharacter {
     /**
      * Get name.
      *
+     *<p>Returns name of MyCharacter instance.
+     *
      * @return String name of character
      */
     public String getName() {
@@ -63,6 +67,9 @@ public class MyCharacter {
 
     /**
      * Set CharacterClass.
+     *
+     *<p>Sets the CharacterClass for this MyCharacter instance. Removing and adding correct
+     * attribute modifiers as nescessary.
      *
      * @param characterClass Class of the character
      */
@@ -83,6 +90,8 @@ public class MyCharacter {
     /**
      * Get Class.
      *
+     *<p>Returns the CharacterClass for this MyCharacter instance.
+     *
      * @return CharacterClass class of Character
      */
     public CharacterClass getCharacterClass() {
@@ -91,6 +100,9 @@ public class MyCharacter {
 
     /**
      * Set Race.
+     *
+     *<p>Sets the Race for this MyCharacter instance. Removing and adding correct
+     * attribute modifiers as nescessary.
      *
      * @param race Race of Character
      */
@@ -111,6 +123,8 @@ public class MyCharacter {
     /**
      * Get Race.
      *
+     *<p>Returns the Race for this MyCharacter instance.
+     *
      * @return Race race of Character
      */
     public Race getRace() {
@@ -119,6 +133,9 @@ public class MyCharacter {
 
     /**
      * Set Talent.
+     *
+     *<p>Sets the Talent for this MyCharacter instance. Removing and adding correct
+     * attribute modifiers as nescessary.
      *
      *<p>Sets characters talent.
      *
@@ -179,6 +196,8 @@ public class MyCharacter {
     /**
      * Get Talent.
      *
+     *<p>Returns Talent of this MyCharacter instance.
+     *
      * @return Talents talent of Character
      */
     public Talents getTalent() {
@@ -187,6 +206,8 @@ public class MyCharacter {
 
     /**
      * Get health.
+     *
+     *<p>Returns health attribute of this MyCharacter instance.
      *
      * @return int health of character
      */
@@ -197,6 +218,8 @@ public class MyCharacter {
     /**
      * Get stamina.
      *
+     *<p>Returns stamina attribute of this MyCharacter instance.
+     *
      * @return int stamina of character
      */
     public int getStamina() {
@@ -205,6 +228,8 @@ public class MyCharacter {
 
     /**
      * Get hitChance.
+     *
+     *<p>Returns hitChance attribute of this MyCharacter instance.
      *
      * @return int hitChance of character
      */
@@ -215,6 +240,8 @@ public class MyCharacter {
     /**
      * Get defense.
      *
+     *<p>Returns defense attribute of this MyCharacter instance.
+     *
      * @return int defense of character
      */
     public int getDefense() {
@@ -224,7 +251,9 @@ public class MyCharacter {
     /**
      * Clear all myCharacter attributes.
      *
-     *<p>Sets all MyCharacter attributes back to null or default values.
+     *<p>Resets all MyCharacter attributes back to null or default values.
+     *  Used for testing.
+     *
      */
     public void clearCharacter() {
         this.name = null;
