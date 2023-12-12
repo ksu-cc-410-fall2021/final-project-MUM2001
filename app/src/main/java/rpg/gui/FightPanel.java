@@ -19,17 +19,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import selectionmenu.SelectionMenu;
 
-
-
-
 /**
- * Represents a FightPanel.
+ * Represents the FightPanel.
  *
- *<p>Panel represents the results and actions of the fight.
- *  Displaying player and computer pertinent attributes, player
- *  interaction buttons, and results provided a valid player object
- *  is provided. If it is not, a prompt and button are provided to
- *  return to character creation.
+ *<p>Panel represents actions and results of the fight. Displaying
+ * player and computer pertinent attributes, player interaction buttons
+ * and the results, provided a valid player object is provided a valid
+ * player object is provided. If it is not, a prompt and button are
+ * provided to return to character creation.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
  * @version: 1.0
@@ -60,8 +57,8 @@ public class FightPanel extends JPanel implements ActionListener {
      *  the underlying Fight Object used to perform calculations and
      *  store data for the fight.
      *
-     @param parent PrimaryWindow to serve as parent window
-     @param player Player Object to be used as parameter of Fight Object
+     *@param parent PrimaryWindow to serve as parent window
+     *@param player Player Object to be used as parameter of Fight Object
      */
     public FightPanel(PrimaryWindow parent, Player player) {
         this.parent = parent;
