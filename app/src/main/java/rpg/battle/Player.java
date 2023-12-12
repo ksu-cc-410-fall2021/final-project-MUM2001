@@ -21,10 +21,11 @@ public class Player {
     /**
      * Constructor with myCharacter instance provided.
      *
-     *<p>Builds a dulicate of the myCharacter changible stats so they can
-     *  be modified in the fight without changing underlying myCharacter object.
+     *<p>Builds a dulicate of the myCharacter instance 
+     *  to be used in a fight. Allowing changes to be made to these attributes
+     *  in the fight without changing underlying myCharacter instance.
      *
-     * @param myCharacter MyCharacter Instance representing player
+     * @param myCharacter base MyCharacter instance Player is representing
      */
     public Player(MyCharacter myCharacter) {
         this.myCharacter = myCharacter;
@@ -37,7 +38,9 @@ public class Player {
     /*
      * Get MyCharacter.
      *
-     * @return MyCharacter instance of character
+     *<p>Returns the base MyCharacter instance.
+     *
+     * @return MyCharacter instance used as base for player
      */
     public MyCharacter getMyCharacter() {
         return this.myCharacter;
@@ -46,7 +49,9 @@ public class Player {
     /*
      * Get name.
      *
-     * @return String name of character
+     *<p>Returns the name of the base MyCharacter instance.
+     *
+     * @return String name of player
      */
     public String getName() {
         return this.myCharacter.getName();
@@ -55,7 +60,9 @@ public class Player {
     /**
      * Get Talent.
      *
-     * @return Talents talent of Character
+     *<p>Returns the Talent of the base MyCharacter instance.
+     *
+     * @return Talents talent of player
      */
     public Talents getTalent() {
         return this.myCharacter.getTalent();
@@ -64,7 +71,9 @@ public class Player {
     /**
      * Get Current health.
      *
-     * @return int health of character
+     *<p>Returns the current health stat of this player instance.
+     *
+     * @return int health of player
      */
     public int getCurrentHealth() {
         return this.health;
@@ -73,7 +82,9 @@ public class Player {
     /**
      * Get Current stamina.
      *
-     * @return int stamina of character
+     *<p>Returns the current stamina stat of this player instance.
+     *
+     * @return int stamina of player
      */
     public int getCurrentStamina() {
         return this.stamina;
@@ -82,7 +93,10 @@ public class Player {
     /**
      * Get Total health.
      *
-     * @return int health of character
+     *<p>Returns the total health stat of this player instance.
+     *  That being the base MyCharacter instance's health.
+     *
+     * @return int health of player
      */
     public int getTotalHealth() {
         return this.myCharacter.getHealth();
@@ -91,7 +105,10 @@ public class Player {
     /**
      * Get Total stamina.
      *
-     * @return int stamina of character
+     *<p>Returns the total stamina stat of this player instance.
+     *  That being the base MyCharacter instance's stamina.
+     *
+     * @return int stamina of player
      */
     public int getTotalStamina() {
         return this.myCharacter.getStamina();
@@ -100,7 +117,9 @@ public class Player {
     /**
      * Get hitChance.
      *
-     * @return int hitChance of character
+     *<p>Returns the hit chance stat of this player instance.
+     *
+     * @return int hitChance of player
      */
     public int getHitChance() {
         return this.hitChance;
@@ -109,7 +128,9 @@ public class Player {
     /**
      * Get defense.
      *
-     * @return int defense of character
+     *<p>Returns the defense stat of this player instance.
+     *
+     * @return int defense of player
      */
     public int getDefense() {
         return this.defense;
@@ -117,6 +138,8 @@ public class Player {
 
     /**
      * Changes Character Health in response to Hit.
+     *
+     *<p>Subtracts damage taken from player instance's health.
      *
      * @param damage damage of the attack
      */
@@ -127,6 +150,9 @@ public class Player {
     /**
      * Changes Character Stamina in response to attacking.
      *
+     *<p>Subtracts 20 points from stamina when an attack is attempted.
+     *  to simulate effort exerted attacking.
+     *
      */
     public void makeHit() {
         this.stamina = this.stamina - 20;
@@ -135,7 +161,7 @@ public class Player {
     /**
      * resets stamina to max when needed.
      *
-     *<p>Used when player Defends or exhausts all stamina.
+     *<p>Used when player Defends(resting) or exhausts all stamina.
      *
      */
     public void resetStamina() {
@@ -145,7 +171,9 @@ public class Player {
     /**
      * Slightly heals Character.
      *
-     *<p>Used when player defends.
+     *<p>Used when player defends. Heals for 5 points unless that makes
+     *  health greater then max possible, in that case, sets it to max
+     *  health of character.
      *
      */
     public void heal() {
@@ -156,7 +184,10 @@ public class Player {
     }
 
     /**
-     * Tests if the Character has requisite attributes to start fight.
+     * Tests if the base MyCharacter instance has requisite attributes 
+     * to start fight.
+     *
+     *<p>Checks to make sure all attributes are set and name isn't empty.
      *
      * @return boolean Character ready or not
      */

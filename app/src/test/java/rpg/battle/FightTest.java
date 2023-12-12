@@ -286,10 +286,31 @@ public class FightTest {
      */
     @Test
     public void testFightRandomEnemyMethodSetsEnemyNameCorrectly() {
-        Player player = Fight.randomEnemy();
-        assertTrue(player.getName() == "Morrigan"
-                || player.getName() == "Oghren" 
-                || player.getName() == "Zevran"); 
+        Fight fight = new Fight(mockPlayer);
+        assertTrue((fight.getComputerName() == "Morrigan" 
+                && fight.getComputerRace().toString() == "Human" 
+                && fight.getComputerCharacterClass().toString() == "Mage" 
+                && fight.getComputerTalent().toString() == "Tall" 
+                && fight.getComputerCurrentHealth() == 90 
+                && fight.getComputerCurrentStamina() == 90 
+                && fight.getComputerHitChance() == 75 
+                && fight.getComputerDefense() == 55)
+                || (fight.getComputerName() == "Oghren" 
+                && fight.getComputerRace().toString() == "Dwarf" 
+                && fight.getComputerCharacterClass().toString() == "Warrior" 
+                && fight.getComputerTalent().toString() == "Stocky" 
+                && fight.getComputerCurrentHealth() == 140 
+                && fight.getComputerCurrentStamina() == 70 
+                && fight.getComputerHitChance() == 30 
+                && fight.getComputerDefense() == 60) 
+                || (fight.getComputerName() == "Zevran"
+                && fight.getComputerRace().toString() == "Elf" 
+                && fight.getComputerCharacterClass().toString() == "Rogue" 
+                && fight.getComputerTalent().toString() == "Fast Twitch" 
+                && fight.getComputerCurrentHealth() == 70 
+                && fight.getComputerCurrentStamina() == 110 
+                && fight.getComputerHitChance() == 90 
+                && fight.getComputerDefense() == 30)); 
     }
 
    
