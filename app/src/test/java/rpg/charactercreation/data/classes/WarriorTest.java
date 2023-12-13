@@ -22,28 +22,40 @@ import rpg.charactercreation.data.classes.Warrior;
  * <p>This class tests the Rogue class.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class WarriorTest {
 
+    /**
+     * Test Warrior has correct description.
+     */
     @Test 
     public void testToStringReturnsCorrectDescription() {
         Warrior rk = new Warrior();
         assertTrue(rk.toString().equals("Warrior"));
     }
 
+    /**
+     * Test Warrior inherits from CharacterClass directly.
+     */
     @Test 
     public void testInstanceOfCharacterClass() {
         Warrior rk = new Warrior();
         assertTrue(rk instanceof CharacterClass);
     }
 
+    /**
+     * Test Warrior implements Character.
+     */
     @Test 
     public void testInstanceOfCharacter() {
         Warrior rk = new Warrior();
         assertTrue(rk instanceof Character);
     }   
 
+    /**
+     * Test Warrior has correct modifier values.
+     */
     @Test 
     public void testValuesSetCorrectly() {
         Warrior rk = new Warrior();

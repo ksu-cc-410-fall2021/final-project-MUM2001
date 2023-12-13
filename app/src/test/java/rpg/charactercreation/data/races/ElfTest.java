@@ -21,28 +21,40 @@ import rpg.charactercreation.data.races.Race;
  * <p>This class tests the Elf class.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class ElfTest {
 
+    /**
+     * Test Elf description is correct.
+     */
     @Test 
     public void testToStringReturnsCorrectDescription() {
         Elf rk = new Elf();
         assertTrue(rk.toString().equals("Elf"));
     }
 
+    /**
+     * Test Elf inherits from Race.
+     */
     @Test 
     public void testInstanceOfRace() {
         Elf rk = new Elf();
         assertTrue(rk instanceof Race);
     }
 
+    /**
+     * Test Elf implements Character.
+     */
     @Test 
     public void testInstanceOfCharacter() {
         Elf rk = new Elf();
         assertTrue(rk instanceof Character);
     }   
 
+    /**
+     * Test Elf has correct stat modifiers.
+     */
     @Test 
     public void testValuesSetCorrectly() {
         Elf rk = new Elf();

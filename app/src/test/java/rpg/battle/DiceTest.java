@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  * <p>This class tests the Dice wrapper class for the external Dice Library.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class DiceTest {
 

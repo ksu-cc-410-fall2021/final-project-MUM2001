@@ -27,7 +27,7 @@ import rpg.charactercreation.data.races.Race;
  * <p>This class tests the Fight class which controls the battle simulation.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 @MockitoSettings(strictness = Strictness.STRICT_STUBS)
 public class FightTest {

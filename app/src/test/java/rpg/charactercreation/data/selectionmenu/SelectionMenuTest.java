@@ -28,10 +28,13 @@ import rpg.charactercreation.data.selectionmenu.SelectionMenu;
  * <p>This class tests the SelectionMenu class.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class SelectionMenuTest {
 
+    /**
+     * Test Menu Class List has Mage in it.
+     */
     @Test 
     public void testMenuHasMageInCharacterClassesList() {
         SelectionMenu menu = new SelectionMenu();
@@ -46,6 +49,9 @@ public class SelectionMenuTest {
         assertTrue(b);
     }
 
+    /**
+     * Test Menu Class List has Warrior in it.
+     */
     @Test 
     public void testMenuHasWarriorInCharacterClassesList() {
         SelectionMenu menu = new SelectionMenu();
@@ -60,6 +66,9 @@ public class SelectionMenuTest {
         assertTrue(b);
     }
 
+    /**
+     * Test Menu Class List has Rogue in it.
+     */
     @Test 
     public void testMenuHasRogueInCharacterClassesList() {
         SelectionMenu menu = new SelectionMenu();
@@ -74,6 +83,9 @@ public class SelectionMenuTest {
         assertTrue(b);
     }
 
+    /**
+     * Test Menu Race List has Dwarf in it.
+     */
     @Test 
     public void testMenuHasDwarfInRacesList() {
         SelectionMenu menu = new SelectionMenu();
@@ -88,6 +100,9 @@ public class SelectionMenuTest {
         assertTrue(b);
     }
 
+    /**
+     * Test Menu Race List has Elf in it.
+     */
     @Test 
     public void testMenuHasElfInRacesList() {
         SelectionMenu menu = new SelectionMenu();
@@ -102,6 +117,9 @@ public class SelectionMenuTest {
         assertTrue(b);
     }
 
+    /**
+     * Test Menu Race List has Human in it.
+     */
     @Test 
     public void testMenuHasHumanInRacesList() {
         SelectionMenu menu = new SelectionMenu();
@@ -116,6 +134,9 @@ public class SelectionMenuTest {
         assertTrue(b);
     }
 
+    /**
+     * Test Menu Race List has length of 3 items.
+     */
     @Test 
     public void testMenuRacesListHasLength3() {
         SelectionMenu menu = new SelectionMenu();
@@ -124,6 +145,9 @@ public class SelectionMenuTest {
         assertTrue(list.size() == 3);
     }
 
+    /**
+     * Test Menu Class List has length of 3 items.
+     */
     @Test 
     public void testMenuCharacterClassListHasLength3() {
         SelectionMenu menu = new SelectionMenu();

@@ -21,22 +21,31 @@ import rpg.charactercreation.data.classes.Mage;
  * <p>This class tests the Mage class.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class MageTest {
 
+    /**
+     * Test Mage inherits from CharacterClass directly.
+     */
     @Test 
     public void testInstanceOfCharacterClass() {
         Mage rk = new Mage();
         assertTrue(rk instanceof CharacterClass);
     }
-
+    
+    /**
+     * Test Mage implements Character.
+     */
     @Test 
     public void testInstanceOfCharacter() {
         Mage rk = new Mage();
         assertTrue(rk instanceof Character);
     }   
 
+    /**
+     * Test Mage has correct modifier values.
+     */
     @Test 
     public void testValuesSetCorrectly() {
         Mage rk = new Mage();
@@ -46,6 +55,9 @@ public class MageTest {
         assertTrue(rk.getDefenseModifier() == 0);
     }
 
+    /**
+     * Test Mage has correct description.
+     */
     @Test 
     public void testToStringReturnsCorrectDescription() {
         Mage rk = new Mage();

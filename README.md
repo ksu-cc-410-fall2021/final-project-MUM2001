@@ -4,16 +4,17 @@ This project is designed as an implementation of a simplified custom role-playin
 (For specifics on the role-playing system see below.)
 
 It allows users to interact with a graphical user interface to select the traits of and choose
-the name of their character.(For specifics see below.)
+the name of their character.
+(For specifics see below.)
 
 Once done with creating their character, the user can choose to engage in a simulated battle.
-In this battle one of three preset enemies are selected to by the opponent, at random.
+In this battle one of three preset enemies are selected to be the opponent, at random.
 The user has the choice to attack or defend, rolling dice for a chance to do damage against
 their opponent, or recovering their stamina and some health.
 (For specifics on the battle mechanics see below.)
 
-After either, or both combatants are eliminated a pop up informs the user of the result
-and reloads the character creation menu, allowing the user to modify their character and
+After either, or both, combatants are eliminated, a pop up will inform the user of the result
+and reload the character creation menu, allowing the user to modify their character and
 fight again or simply close the application.
 
 ROLE-PLAYING SYSTEM:
@@ -27,10 +28,10 @@ The base stats are health, stamina, hit chance, and defense.
         HEALTH: This represents the amount of damage that can be taken before the player dies.
                 STARTING VALUE(BEFORE MODIFIERS): 100
 
-        STAMINA: This represents how energy the player has. Determines if player can attack and their chance to hit.
+        STAMINA: This represents how much energy the player has. Determines if the player can attack and their chance to hit.
                 STARTING VALUE(BEFORE MODIFIERS): 100
 
-        HIT CHANCE: This represents player's chance to land an attack. In conjunction with stamina, it determines if a player attack lands. 
+        HIT CHANCE: This represents player's chance to land an attack. In conjunction with stamina, it determines if a player's attack lands. 
                 STARTING VALUE(BEFORE MODIFIERS): 50
 
         DEFENSE: This represents player's chance to avoid an attack. In conjunction with stamina, it determines if an opponent's attack lands. 
@@ -56,7 +57,7 @@ RACES:
         Human: The most adaptable and versatile, they have no major strengths compared to their peers but also no weaknesses.
             MODIFIERS: (HEALTH +0) (STAMINA +0) (Hit Chance +0) (Defense +0)
 
-        Elf: Physically fragile but their featherweight build and accuracy compensate for this deficiency.
+        Elf: Physically fragile but their featherweight build and keen eyesight compensate for this deficiency.
             MODIFIERS: (HEALTH -20) (STAMINA +20) (Hit Chance +10) (Defense -10)
 
         Dwarf: The sturdiest built and all around toughest group around, but their short height and stocky build has downsides.
@@ -67,7 +68,7 @@ Talents:
         LEFT HANDER: With the weapon held in the left hand attacks can more easily sneak past an opponents shield.
             MODIFIERS: (Hit Chance + 10) 
 
-        STOCKY: Being built tough is helpful but being this large means a giant target not to mention making precise, careful difficult.
+        STOCKY: Being built tough is helpful, but being this large means a giant target.
             MODIFIERS: (HEALTH +10) (Defense -10)
 
         TALL: Long arms and legs make it easier to safely land hits on an opponent and quicker to move away from danger.
@@ -76,7 +77,7 @@ Talents:
         FAST TWITCH: Lightning quick movement makes it much easier to land a strike but such exertion is tiring.
             MODIFIERS: (Hit Chance +20) (Stamina -20)
                 
-        MARATHON RUNNER: A consistent sustainable pace can let you fight for hours, but it also makes your strikes more predictable.. .
+        MARATHON RUNNER: A consistent, sustainable pace can let you fight for hours, but it also makes your strikes more predictable.
             MODIFIERS: (Hit Chance -10) (Stamina +10)
 
 BATTLE SYSTEM:
@@ -100,7 +101,7 @@ Details for each action and the computer's response are listed below.
 
 Attack:
 
-If the player has stamina remaining they will roll a D20 die to see fit their attack lands.
+If the player has stamina remaining they will roll a D20 die to see if their attack lands.
 
 The calculation to see if an attack to lands is as follows.
 
@@ -130,7 +131,7 @@ Note, no dice rolls are required for this action.
 Computer Response:
 
 Regardless of the players actions, the computer will make an automatic response.
-It will trigger an attack of their own if they have stamina left or defend, rest, if they have exhausted their stamina.
+It will trigger an attack of their own, if they have stamina left, or defend, rest, if they have exhausted their stamina.
 The calculations for these actions are the same as those initiated by the player, but with the roles reversed. 
 
 
@@ -139,7 +140,7 @@ End of the Battle:
 
 If at any point one or both of the combatants's health reaches zero, the fight will end and a message will be displayed,
 to inform the user of the result, before loading the character creation screen once more, to allow the player to modify
-their character if they wish before initiating a battle once more.
+their character if they wish before initiating another battle.
 
 
 
@@ -166,7 +167,7 @@ or the large "Reload Creation Panel" button in the center of the screen.
 
 Battle:
 
-The user can click on the "Attack" and "Defend" buttons once in the fight to perform the actions, the details of which are listed
+The user can click on the "Attack" and "Defend" buttons once in the fight to perform those actions, the details of which are listed
 above.
 
 The results of the user's choice and computer's response are then displayed in the results box and the current health and stamina
@@ -176,7 +177,7 @@ Once the fight ends a message is displayed to show the final result, then the us
 and can restart the process all over again.
 
 Note: At any time clicking the "Fight" button again will reset the battle, selecting an opponent again and reseting the players health
-and stamina to their max values. Also, clicking the "Create" at any time will load the character creation panel. 
+and stamina to their max values. Also, clicking the "Create" button at any time will load the character creation panel. 
 
 EXTERNAL LIBRARY:
 

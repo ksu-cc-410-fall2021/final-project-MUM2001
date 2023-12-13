@@ -11,11 +11,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mock;
-import org.mockito.MockedStatic;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoSettings;
-import org.mockito.quality.Strictness;
 import rpg.charactercreation.data.Character;
 import rpg.charactercreation.data.classes.CharacterClass;
 import rpg.charactercreation.data.classes.Mage;
@@ -33,67 +28,95 @@ import rpg.charactercreation.data.races.Race;
  * <p>This class tests the MyCharacter class.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class MyCharacterTest {
 
-    @Mock
-    Talents mockTalent;
 
+    /**
+     * Test Constructor sets empty string input to null.
+     */
     @Test 
     public void testDefaultConstructorValueNameIsNull() {
         MyCharacter rk = new MyCharacter("");
         assertTrue(rk.getName() == null);
     }
 
+    /**
+     * Test Constructor sets character class to null.
+     */
     @Test 
     public void testDefaultConstructorValueClassIsNull() {
         MyCharacter rk = new MyCharacter("");
         assertTrue(rk.getCharacterClass() == null);
     }
 
+    /**
+     * Test Constructor sets race to null.
+     */
     @Test 
     public void testDefaultConstructorValueRaceIsNull() {
         MyCharacter rk = new MyCharacter("");
         assertTrue(rk.getRace() == null);
     }
 
+    /**
+     * Test Constructor sets talent to null.
+     */
     @Test 
     public void testDefaultConstructorValueTalentIsNull() {
         MyCharacter rk = new MyCharacter("");
         assertTrue(rk.getTalent() == null);
     }
 
+    /**
+     * Test Constructor sets health to 100.
+     */
     @Test 
     public void testDefaultConstructorValueHealthIs100() {
         MyCharacter rk = new MyCharacter("");
         assertTrue(rk.getHealth() == 100);
     }
 
+    /**
+     * Test Constructor sets stamina to 100.
+     */
     @Test 
     public void testDefaultConstructorValueStaminaIs100() {
         MyCharacter rk = new MyCharacter("");
         assertTrue(rk.getStamina() == 100);
     }
 
+    /**
+     * Test Constructor sets hit chance to 50.
+     */
     @Test 
     public void testDefaultConstructorValueHitChanceIs50() {
         MyCharacter rk = new MyCharacter("");
         assertTrue(rk.getHitChance() == 50);
     }
 
+    /**
+     * Test Constructor sets defense to 50.
+     */
     @Test 
     public void testDefaultConstructorValueDefenseIs50() {
         MyCharacter rk = new MyCharacter("");
         assertTrue(rk.getDefense() == 50);
     }
 
+    /**
+     * Test Constructor sets name to parameter.
+     */
     @Test 
     public void testConstructorSetsGivenName() {
         MyCharacter rk = new MyCharacter("Mike");
         assertTrue(rk.getName().equals("Mike"));
     }
 
+    /**
+     * Test setName sets name to parameter.
+     */
     @Test 
     public void testSetNameSetsCorrectName() {
         MyCharacter rk = new MyCharacter("");
@@ -101,6 +124,9 @@ public class MyCharacterTest {
         assertTrue(rk.getName().equals("Mike"));
     }
 
+    /**
+     * Test setCharacterClass sets CharacterClass to parameter.
+     */
     @Test 
     public void testSetCharacterClassSetsCorrectCharacterClass() {
         MyCharacter rk = new MyCharacter("");
@@ -109,6 +135,9 @@ public class MyCharacterTest {
         assertTrue(rk.getCharacterClass().equals(m));
     }
 
+    /**
+     * Test setCharacterClass sets CharacterClass to parameter even if already set.
+     */
     @Test 
     public void testSetNewCharacterClassSetsCorrectNewCharacterClass() {
         MyCharacter rk = new MyCharacter("");
@@ -119,6 +148,9 @@ public class MyCharacterTest {
         assertTrue(rk.getCharacterClass().equals(n));
     }
 
+    /**
+     * Test setRace sets race to parameter.
+     */
     @Test 
     public void testSetRaceSetsCorrectRace() {
         MyCharacter rk = new MyCharacter("");
@@ -127,6 +159,9 @@ public class MyCharacterTest {
         assertTrue(rk.getRace().equals(m));
     }
 
+    /**
+     * Test setRace sets race to parameter even if already set.
+     */
     @Test 
     public void testSetNewRaceSetsCorrectNewRace() {
         MyCharacter rk = new MyCharacter("");
@@ -137,6 +172,9 @@ public class MyCharacterTest {
         assertTrue(rk.getRace().equals(n));
     }
 
+    /**
+     * Test clearCharacter resets health to Base Level.
+     */
     @Test 
     public void testClearCharacterResetsHealthToBaseLevel() {
         MyCharacter rk = new MyCharacter("");
@@ -146,6 +184,9 @@ public class MyCharacterTest {
         assertTrue(rk.getHealth() == 100);
     }
 
+    /**
+     * Test clearCharacter resets stamina to Base Level.
+     */
     @Test 
     public void testClearCharacterResetsStaminaToBaseLevel() {
         MyCharacter rk = new MyCharacter("");
@@ -155,6 +196,9 @@ public class MyCharacterTest {
         assertTrue(rk.getStamina() == 100);
     }
 
+    /**
+     * Test clearCharacter resets hit chance to Base Level.
+     */
     @Test 
     public void testClearCharacterResetsHitChanceToBaseLevel() {
         MyCharacter rk = new MyCharacter("");
@@ -166,6 +210,9 @@ public class MyCharacterTest {
         assertTrue(rk.getHitChance() == 50);
     }
 
+    /**
+     * Test clearCharacter resets defense to Base Level.
+     */
     @Test 
     public void testClearCharacterResetsDefenseToBaseLevel() {
         MyCharacter rk = new MyCharacter("");
@@ -177,6 +224,9 @@ public class MyCharacterTest {
         assertTrue(rk.getDefense() == 50);
     }
 
+    /**
+     * Test setTalent sets correct Talent and makes stat change(left hander).
+     */
     @Test 
     public void testSetTalentLeftHanderSetsCorrectTalentAndStatChanges() {
         MyCharacter rk = new MyCharacter("");
@@ -185,6 +235,9 @@ public class MyCharacterTest {
         assertTrue(rk.getHitChance() == 60);
     }
 
+    /**
+     * Test setTalent sets correct Talent and makes stat change(Stocky).
+     */
     @Test 
     public void testSetTalentStockySetsCorrectTalentAndStatChanges() {
         MyCharacter rk = new MyCharacter("");
@@ -194,6 +247,9 @@ public class MyCharacterTest {
         assertTrue(rk.getDefense() == 40);
     }
 
+    /**
+     * Test setTalent sets correct Talent and makes stat change(Tall).
+     */
     @Test 
     public void testSetTalentTallSetsCorrectTalentAndStatChanges() {
         MyCharacter rk = new MyCharacter("");
@@ -203,6 +259,9 @@ public class MyCharacterTest {
         assertTrue(rk.getDefense() == 55);
     }
 
+    /**
+     * Test setTalent sets correct Talent and makes stat change(Fast Twitch).
+     */
     @Test 
     public void testSetTalentFastTwitchSetsCorrectTalentAndStatChanges() {
         MyCharacter rk = new MyCharacter("");
@@ -212,6 +271,9 @@ public class MyCharacterTest {
         assertTrue(rk.getStamina() == 80);
     }
 
+    /**
+     * Test setTalent sets correct Talent and makes stat change(Marathon Runner).
+     */
     @Test 
     public void testSetTalentMarathonRunnerSetsCorrectTalentAndStatChanges() {
         MyCharacter rk = new MyCharacter("");
@@ -222,8 +284,10 @@ public class MyCharacterTest {
     }
 
     /** 
-    * The testsTalentChangedCorrectly method.
+    * The testsTalentChangedCorrectly method(Marathon Runner).
     *
+    *<p>Tests if setting a new talent when Marathon Runner already set will
+    *   result in correct stats.
     *
     *@param talent Talents enum
     */
@@ -237,8 +301,10 @@ public class MyCharacterTest {
     }
 
     /** 
-    * The testsTalentChangedCorrectly method.
+    * The testsTalentChangedCorrectly method(Fast Twitch).
     *
+    *<p>Tests if setting a new talent when Fast Twitch already set will
+    *   result in correct stats.
     *
     *@param talent Talents enum
     */
@@ -252,8 +318,10 @@ public class MyCharacterTest {
     }
 
     /** 
-    * The testsTalentChangedCorrectly method.
+    * The testsTalentChangedCorrectly method(Tall).
     *
+    *<p>Tests if setting a new talent when Tall already set will
+    *   result in correct stats.
     *
     *@param talent Talents enum
     */
@@ -267,8 +335,10 @@ public class MyCharacterTest {
     }
 
     /** 
-    * The testsTalentChangedCorrectly method.
+    * The testsTalentChangedCorrectly method(Stocky).
     *
+    *<p>Tests if setting a new talent when Stocky already set will
+    *   result in correct stats.
     *
     *@param talent Talents enum
     */
@@ -282,8 +352,10 @@ public class MyCharacterTest {
     }
 
     /** 
-    * The testsTalentChangedCorrectly method(LeftHander).
+    * The testsTalentChangedCorrectly method(Left Hander).
     *
+    *<p>Tests if setting a new talent when Left Hander already set will
+    *   result in correct stats.
     *
     *@param talent Talents enum
     */

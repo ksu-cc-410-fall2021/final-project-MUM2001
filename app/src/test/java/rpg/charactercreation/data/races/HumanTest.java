@@ -21,28 +21,40 @@ import rpg.charactercreation.data.races.Race;
  * <p>This class tests the Human class.
  *
  * @author Michael Umscheid mjumsc@ksu.edu
- * @version 0.1
+ * @version 1.0
  */
 public class HumanTest {
 
+    /**
+     * Test Human description is correct.
+     */
     @Test 
     public void testToStringReturnsCorrectDescription() {
         Human rk = new Human();
         assertTrue(rk.toString().equals("Human"));
     }
 
+    /**
+     * Test Human inherits from Race.
+     */
     @Test 
     public void testInstanceOfRace() {
         Human rk = new Human();
         assertTrue(rk instanceof Race);
     }
 
+    /**
+     * Test Human implements Character.
+     */
     @Test 
     public void testInstanceOfCharacter() {
         Human rk = new Human();
         assertTrue(rk instanceof Character);
     }   
 
+    /**
+     * Test Human has correct stat modifiers.
+     */
     @Test 
     public void testValuesSetCorrectly() {
         Human rk = new Human();

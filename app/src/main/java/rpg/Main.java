@@ -11,7 +11,7 @@ import rpg.gui.PrimaryWindow;
  *  FightPanel.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
- * @version: 0.1
+ * @version: 1.0
  */
 public class Main {
 
