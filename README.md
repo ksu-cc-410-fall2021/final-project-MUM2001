@@ -37,20 +37,43 @@ The base stats are health, stamina, hit chance, and defense.
                 STARTING VALUE(BEFORE MODIFIERS): 50
 
 SELECTABLE ATTRIBUTES:
-These selectable attributes are their character class, race, and talent.
+The selectable attributes are character class, race, and talent.
 
         CHARACTER CLASSES:
-            MAGE:
-            WARRIOR:
-            ROGUE:
+            MAGE:A class good at landing hits but physically weak and easily exhausted.
+                MODIFIERS: (HEALTH -10) (STAMINA -10) (Hit Chance +20) (Defense +0)
+
+            WARRIOR: A physically strong class, but it's wild nature leaves the player easily exhausted and with poor accuracy.
+                MODIFIERS: (HEALTH +10) (STAMINA -10) (Hit Chance -10) (Defense +10)
+
+            ROGUE: A vulnerable and physically week class, but it compensates with great endurance and precision.
+                MODIFIERS: (HEALTH -10) (STAMINA +10) (Hit Chance +10) (Defense -10)
+
         RACES:
-            MAGE:
-            WARRIOR:
-            ROGUE:
-        CHARACTER CLASSES:
-            MAGE:
-            WARRIOR:
-            ROGUE:
+            Human: The most adaptable and versatile, they have no major strengths compared to their peers but also no weaknesses.
+                MODIFIERS: (HEALTH +0) (STAMINA +0) (Hit Chance +0) (Defense +0)
+
+            Elf: Physically fragile but their featherweight build and accuracy compensate for this deficiency.
+                MODIFIERS: (HEALTH -20) (STAMINA +20) (Hit Chance +10) (Defense -10)
+
+            Dwarf: The sturdiest built and all around toughest group around, but their short height and stocky build has downsides.
+                MODIFIERS: (HEALTH +20) (STAMINA -20) (Hit Chance -10) (Defense +10)
+
+        Talents:
+            LEFT HANDER: With the weapon held in the left hand attacks can more easily sneak past an opponents shield.
+                MODIFIERS: (Hit Chance + 10) 
+
+            STOCKY: Being built tough is helpful but being this large means a giant target not to mention making precise, careful difficult.
+                MODIFIERS: (HEALTH +10) (Defense -10)
+
+            TALL: Long arms and legs make it easier to safely land hits on an opponent and quicker to move away from danger.
+                MODIFIERS: (Hit Chance +5) (Defense +5)
+
+            TALL: Long arms and legs make it easier to safely land hits on an opponent and quicker to move away from danger.
+                MODIFIERS: (Hit Chance +5) (Defense +5)
+                
+            TALL: Long arms and legs make it easier to safely land hits on an opponent and quicker to move away from danger.
+                MODIFIERS: (Hit Chance +5) (Defense +5)
 
 BATTLE SYSTEM:
 
