@@ -1,11 +1,14 @@
 package rpg;
 
-import gui.PrimaryWindow;
 import java.lang.Runnable;
 import javax.swing.SwingUtilities;
+import rpg.gui.PrimaryWindow;
 
 /**
  * Main Class of Project.
+ *
+ *<p>Loads GUI Panels: Primary Window, CreationPanel, CharacterPanel,
+ *  FightPanel.
  *
  * @author: Michael Umscheid mjumsc@ksu.edu
  * @version: 0.1

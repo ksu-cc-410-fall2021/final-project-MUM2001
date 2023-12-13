@@ -1,12 +1,5 @@
-package gui;
+package rpg.gui;
 
-import classes.CharacterClass;
-import classes.Mage;
-import classes.Rogue;
-import classes.Warrior;
-import data.Character;
-import enums.Talents;
-import gui.CharacterPanel;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,14 +11,18 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import races.Dwarf;
-import races.Elf;
-import races.Human;
-import races.Race;
-import selectionmenu.SelectionMenu;
-
-
-
+import rpg.charactercreation.data.Character;
+import rpg.charactercreation.data.classes.CharacterClass;
+import rpg.charactercreation.data.classes.Mage;
+import rpg.charactercreation.data.classes.Rogue;
+import rpg.charactercreation.data.classes.Warrior;
+import rpg.charactercreation.data.enums.Talents;
+import rpg.charactercreation.data.races.Dwarf;
+import rpg.charactercreation.data.races.Elf;
+import rpg.charactercreation.data.races.Human;
+import rpg.charactercreation.data.races.Race;
+import rpg.charactercreation.data.selectionmenu.SelectionMenu;
+import rpg.gui.CharacterPanel;
 
 /**
  * Represents a CreationPanel.

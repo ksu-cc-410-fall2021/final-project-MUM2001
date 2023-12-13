@@ -1,4 +1,4 @@
-package battle;
+package rpg.battle;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -6,19 +6,19 @@ import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import battle.Dice;
-import battle.Player;
-import classes.CharacterClass;
-import classes.Mage;
-import enums.Talents;
-import me.MyCharacter;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
-import races.Race;
+import rpg.battle.Dice;
+import rpg.battle.Player;
+import rpg.charactercreation.data.classes.CharacterClass;
+import rpg.charactercreation.data.classes.Mage;
+import rpg.charactercreation.data.enums.Talents;
+import rpg.charactercreation.data.me.MyCharacter;
+import rpg.charactercreation.data.races.Race;
 
 
 /** 
@@ -274,7 +274,7 @@ public class FightTest {
      * Test Fight Roll For Computer Defense returns Viable Integer.
      */
     @Test
-    public void testFightRollForPlayerDefenseReturnsViableInteger() {
+    public void testFightRollForComputerDefenseReturnsViableInteger() {
         Fight fight = new Fight(mockPlayer);
         assertTrue(fight.rollForComputerDefense() >= 130);
     }
@@ -285,7 +285,7 @@ public class FightTest {
      * Test Fight Random Enemy Method Sets Enemy Correctly.
      */
     @Test
-    public void testFightRandomEnemyMethodSetsEnemyNameCorrectly() {
+    public void testFightRandomEnemyMethodSetsEnemyCorrectly() {
         Fight fight = new Fight(mockPlayer);
         assertTrue((fight.getComputerName() == "Morrigan" 
                 && fight.getComputerRace().toString() == "Human" 

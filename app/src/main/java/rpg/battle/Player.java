@@ -1,7 +1,7 @@
-package battle;
+package rpg.battle;
 
-import enums.Talents;
-import me.MyCharacter;
+import rpg.charactercreation.data.enums.Talents;
+import rpg.charactercreation.data.me.MyCharacter;
 
 /**
  * Represents a player character used in a particular.
@@ -55,17 +55,6 @@ public class Player {
      */
     public String getName() {
         return this.myCharacter.getName();
-    }
-
-    /**
-     * Get Talent.
-     *
-     *<p>Returns the Talent of the base MyCharacter instance.
-     *
-     * @return Talents talent of player
-     */
-    public Talents getTalent() {
-        return this.myCharacter.getTalent();
     }
 
     /**

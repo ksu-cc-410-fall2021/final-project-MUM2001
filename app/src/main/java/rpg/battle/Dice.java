@@ -1,4 +1,4 @@
-package battle;
+package rpg.battle;
 
 import com.wildpi.games.structures.dice.Die;
 import com.wildpi.games.structures.dice.DieBuilder;

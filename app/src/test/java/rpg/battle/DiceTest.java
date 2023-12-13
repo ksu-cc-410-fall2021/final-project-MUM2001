@@ -1,4 +1,4 @@
-package battle;
+package rpg.battle;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -16,32 +16,34 @@ import org.junit.jupiter.api.Test;
 public class DiceTest {
 
     /**
-     * Test Dice is built with correct Values.
+     * Test Dice is built with correct Values/returns accecptable results on roll.
      */
     @Test
     public void testDiceReturnsCorrectValuesWhenRolled() {
         Dice dice = new Dice();
-        int diceValue = dice.roll();
-        assertTrue(diceValue == 1
-                || diceValue == 2 
-                || diceValue == 3 
-                || diceValue == 4 
-                || diceValue == 5 
-                || diceValue == 6 
-                || diceValue == 7 
-                || diceValue == 8 
-                || diceValue == 9 
-                || diceValue == 10 
-                || diceValue == 11 
-                || diceValue == 12 
-                || diceValue == 13 
-                || diceValue == 14 
-                || diceValue == 15 
-                || diceValue == 16 
-                || diceValue == 17 
-                || diceValue == 18 
-                || diceValue == 19 
-                || diceValue == 20);
+        for (int i = 0; i < 100; i++) {
+            int diceValue = dice.roll();
+            assertTrue(diceValue == 1
+                    || diceValue == 2 
+                    || diceValue == 3 
+                    || diceValue == 4 
+                    || diceValue == 5 
+                    || diceValue == 6 
+                    || diceValue == 7 
+                    || diceValue == 8 
+                    || diceValue == 9 
+                    || diceValue == 10 
+                    || diceValue == 11 
+                    || diceValue == 12 
+                    || diceValue == 13 
+                    || diceValue == 14 
+                    || diceValue == 15 
+                    || diceValue == 16 
+                    || diceValue == 17 
+                    || diceValue == 18 
+                    || diceValue == 19 
+                    || diceValue == 20);
+        }
     }
 
  

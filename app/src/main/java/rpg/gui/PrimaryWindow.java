@@ -1,16 +1,16 @@
-package gui;
+package rpg.gui;
 
-import classes.CharacterClass;
-import enums.Talents;
-import gui.CharacterPanel;
-import gui.CreationPanel;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import races.Race;
+import rpg.charactercreation.data.classes.CharacterClass;
+import rpg.charactercreation.data.enums.Talents;
+import rpg.charactercreation.data.races.Race;
+import rpg.gui.CharacterPanel;
+import rpg.gui.CreationPanel;
 
 
 /**

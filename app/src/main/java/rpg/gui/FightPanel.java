@@ -1,10 +1,5 @@
-package gui;
+package rpg.gui;
 
-import battle.Fight;
-import battle.Player;
-import data.Character;
-import enums.Talents;
-import gui.CharacterPanel;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -17,7 +12,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import selectionmenu.SelectionMenu;
+import rpg.battle.Fight;
+import rpg.battle.Player;
+import rpg.charactercreation.data.Character;
+import rpg.charactercreation.data.enums.Talents;
+import rpg.charactercreation.data.selectionmenu.SelectionMenu;
+import rpg.gui.CharacterPanel;
 
 /**
  * Represents the FightPanel.

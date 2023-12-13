@@ -1,8 +1,5 @@
-package gui;
+package rpg.gui;
 
-import battle.Player;
-import classes.CharacterClass;
-import enums.Talents;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -15,8 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
-import me.MyCharacter;
-import races.Race;
+import rpg.battle.Player;
+import rpg.charactercreation.data.classes.CharacterClass;
+import rpg.charactercreation.data.enums.Talents;
+import rpg.charactercreation.data.me.MyCharacter;
+import rpg.charactercreation.data.races.Race;
 
 /**
  * Represents the Character Panel(Sidebar).
@@ -53,7 +53,7 @@ public class CharacterPanel extends JPanel implements ActionListener {
         this.parent = parent;
         this.setPreferredSize(new Dimension(300, 650));
         this.setLayout(new GridBagLayout());
-        this.myCharacter = new MyCharacter("who?");
+        this.myCharacter = new MyCharacter("");
 
         GridBagConstraints characterlabelgbc = new GridBagConstraints();
         characterlabelgbc.gridx = 0;

@@ -166,6 +166,20 @@ or the large "Reload Creation Panel" button in the center of the screen.
 
 Battle:
 
+The user can click on the "Attack" and "Defend" buttons once in the fight to perform the actions, the details of which are listed
+above.
 
+The results of the user's choice and computer's response are then displayed in the results box and the current health and stamina
+of both the player and computer are displayed on either side of the results box.
 
-external library used: https://github.com/alexv-anderson/WildPi-Dice
+Once the fight ends a message is displayed to show the final result, then the user is loaded back into the character creation screen
+and can restart the process all over again.
+
+Note: At any time clicking the "Fight" button again will reset the battle, selecting an opponent again and reseting the players health
+and stamina to their max values. Also, clicking the "Create" at any time will load the character creation panel. 
+
+EXTERNAL LIBRARY:
+
+This project uses an external library to simulate the dice used for the attack and defense rolls.
+
+library used: https://github.com/alexv-anderson/WildPi-Dice

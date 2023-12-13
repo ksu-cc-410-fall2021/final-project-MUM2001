@@ -1,16 +1,16 @@
-package battle;
+package rpg.battle;
 
-import classes.CharacterClass;
-import classes.Mage;
-import classes.Rogue;
-import classes.Warrior;
-import enums.Talents;
 import java.util.Random;
-import me.MyCharacter;
-import races.Dwarf;
-import races.Elf;
-import races.Human;
-import races.Race;
+import rpg.charactercreation.data.classes.CharacterClass;
+import rpg.charactercreation.data.classes.Mage;
+import rpg.charactercreation.data.classes.Rogue;
+import rpg.charactercreation.data.classes.Warrior;
+import rpg.charactercreation.data.enums.Talents;
+import rpg.charactercreation.data.me.MyCharacter;
+import rpg.charactercreation.data.races.Dwarf;
+import rpg.charactercreation.data.races.Elf;
+import rpg.charactercreation.data.races.Human;
+import rpg.charactercreation.data.races.Race;
 
 
 /**
