@@ -61,7 +61,7 @@ checkstyle {
     toolVersion '10.6.0'
 }
 
-version = 'v1.0.0'
+version = 'v1.0.3'
 
 java {
     withSourcesJar()

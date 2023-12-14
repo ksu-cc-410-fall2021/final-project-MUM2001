@@ -66,10 +66,10 @@ public class Fight {
                 returned = returned + this.computerAction();
             }
         } else {
-            this.player.resetStamina();
             returned = returned + (this.player.getName() 
                 + " is exhausted! Soo, ");
             returned = returned + this.computerAction();
+            this.player.resetStamina();
         }
         return returned;
     }
@@ -84,12 +84,12 @@ public class Fight {
      */
     public String defend() {
         String returned = "";
-        this.player.resetStamina();
-        this.player.heal();
         returned = returned + (this.player.getName() 
                 + " rests. \n ");
         returned = returned + "Creating an opening for, \n";
         returned = returned + this.computerAction();
+        this.player.resetStamina();
+        this.player.heal();
         return returned;
     }
 
@@ -116,10 +116,10 @@ public class Fight {
                     +  ". \n");
             }
         } else {
-            this.computer.resetStamina();
-            this.computer.heal();
             returned = returned + (this.computer.getName() 
                 + " rests. \n");
+            this.computer.resetStamina();
+            this.computer.heal();
         }
         return returned;
     }

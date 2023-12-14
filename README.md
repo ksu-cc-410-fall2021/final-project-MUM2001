@@ -122,10 +122,14 @@ If not, the attack misses.
 On the other hand, if the player has exhausted all their stamina, and still tries to attack, they will be forced to wait out the
 turn, reseting their stamina to max but missing out on a chance to attack or heal.
 
+Note: the stamina reset will not be applied till after the opponent's action.
+
 Defend:
 
 If the player chooses to defend, they will take a turn to rest, reseting their stamina to max and healing 5 health.
-Note, no dice rolls are required for this action.
+
+Note: no dice rolls are required for this action and the stamina and health resets will be applied after the opponent's 
+turn.
 
 
 Computer Response:
