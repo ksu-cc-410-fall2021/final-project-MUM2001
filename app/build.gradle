@@ -52,10 +52,46 @@ jacocoTestReport {
 }
 // Add tests to Javadoc
 javadoc {
-  classpath += project.sourceSets.test.compileClasspath
-  source += project.sourceSets.test.allJava
+ // classpath += project.sourceSets.test.compileClasspath
+ // source += project.sourceSets.test.allJava
+    destinationDir = file("${rootDir}/docs/")
 }
 // Force Checkstyle to be more current version
 checkstyle {
     toolVersion '10.6.0'
+}
+
+version = 'v1.0.0'
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                    'Implementation-Version': project.version,
+                    'Main-Class': 'rpg.Main')
+    }
+    archivesBaseName = project.name
+    destinationDirectory = file("${rootDir}/dist/")
+}
+
+tasks.named('sourcesJar') {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                    'Implementation-Version': project.version)
+    }
+    archivesBaseName = project.name
+    destinationDirectory = file("${rootDir}/dist/")
+}
+
+tasks.named('javadocJar') {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                    'Implementation-Version': project.version)
+    }
+    archivesBaseName = project.name
+    destinationDirectory = file("${rootDir}/dist/")
 }
