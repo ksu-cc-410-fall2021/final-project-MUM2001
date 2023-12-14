@@ -184,3 +184,17 @@ EXTERNAL LIBRARY:
 This project uses an external library to simulate the dice used for the attack and defense rolls.
 
 library used: https://github.com/alexv-anderson/WildPi-Dice
+
+Liscense Included in "lib" folder with the jar file of the library
+
+DOCUMENTATION:
+
+Full documentation available at this url:  https://ksu-cc-410-fall2021.github.io/final-project-MUM2001/
+
+RUNNING THE PROGRAM:
+
+Simply download the JAR file (rpg-v1.0.0.jar) and run it using whatever commands your particular IDE requires to run such a file:
+
+example: Codio:  "java jar rpg-v1.0.0.jar"
+
+Note: the external library file (dice-1.jar) will also have to be downloaded and implemented for proper functionallity.
