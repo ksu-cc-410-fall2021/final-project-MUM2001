@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"rpg"},{"l":"rpg.battle"},{"l":"rpg.charactercreation.data"},{"l":"rpg.charactercreation.data.classes"},{"l":"rpg.charactercreation.data.enums"},{"l":"rpg.charactercreation.data.me"},{"l":"rpg.charactercreation.data.races"},{"l":"rpg.charactercreation.data.selectionmenu"},{"l":"rpg.gui"}]
